@@ -1,0 +1,158 @@
+'.source.js':
+    'Valid form':
+        'prefix': 'pc-valid'
+        'body': """
+            vm.form.$submmited = true;
+            if (vm.form.$invalid) {
+                $rootScope.$broadcast('show-errors-check-validity');
+                return;
+            }
+        """
+    'Scope func':
+        'prefix': 'pc-service'
+        'body': """
+            ${1:serviceName}.${2:function}({
+                ${3:params}
+            },
+            ${4:body},
+            function(value, responseHeaders) {
+            },
+            function(error) {
+                vm.error = error;
+            });
+        """
+    'Scope function':
+        'prefix': 'pc-scope-function'
+        'body': """
+            $scope.${1:functionName} = function(${2:params}) {
+                ${3://body}
+            }
+        """
+    'List controller':
+        'prefix': 'pc-list-controller'
+        'body': """
+            (function() {
+                'use strict';
+
+                angular
+                    .module('${1:module}')
+                    .controller('List${2:Controller}', List${2:Controller});
+
+                List${2:Controller}.$inject = ['$scope', '${3:service}Service', 'API_BASE_URL'];
+
+                /* @ngInject */
+                function List${2:Controller}($scope, ${3:service}Service, API_BASE_URL) {
+                    var vm = this;
+
+                    vm.getRemoteUrl = getRemoteUrl;
+                    vm.onSelect = onSelect;
+                    vm.getConfirmMessage = getConfirmMessage;
+                    vm.remove = remove;
+
+                    activate();
+
+                    function activate() {
+                        vm.datatableControl = {};
+                        vm.confirmControl = {};
+                        initDatatableScope();
+                        initColumns();
+                    }
+
+                    function initDatatableScope() {
+                        vm.datatableScope = $scope.$new(true);
+                        vm.datatableScope.confirmDelete = function(id) {
+                            vm.confirmControl.open(id);
+                        }
+                    }
+
+                    function initColumns() {
+
+                        vm.columns = [{
+                            header: 'Código',
+                            property: 'id',
+                            order: true,
+                            type: "number"
+                        }, {
+                            header: 'Nome',
+                            property: 'name',
+                            order: true,
+                            type: "text"
+                        },
+                        {
+                            header: 'Ações',
+                            cellTemplate: 'actions-column.html',
+                            order: false,
+                        }];
+                    }
+
+                    function getRemoteUrl() {
+                        return API_BASE_URL + 'app/rest/${4:endPoint}';
+                    }
+
+                    function getConfirmMessage() {
+                        return "Tem certeza de que deseja remover ${5:descricaoEntidade} {{data}}?";
+                    }
+
+                    function onSelect(value) {
+                        $scope.selected = value.data;
+                    }
+
+                    function remove(data) {
+                        ${6:service}Service.delete({
+                                id: data
+                            }, {},
+                            function(value, responseHeaders) {
+                                vm.error = null;
+                                vm.success = 'OK';
+                                vm.datatableControl.applySearch();
+                            },
+                            function(error) {
+                                vm.success = null;
+                                vm.error = error;
+                            });
+                    }
+
+                }
+            })();
+        """
+    'Resource':
+        'prefix': 'pc-resource'
+        'body': """
+            (function() {
+                'use strict';
+
+                angular
+                    .module('${1:module}')
+                    .service('${2:Service}', ${2:Service});
+
+                ${2:Service}.$inject = ['$resource', 'API_BASE_URL'];
+
+                /* @ngInject */
+                function ${2:Service}($resource, API_BASE_URL) {
+                    return $resource(API_BASE_URL + 'app/rest/${3:endpoint}/:id/:action', {
+                        id: '@id',
+                        action: '@action'
+                    }, {
+                        query: {
+                            isArray: false
+                        },
+                        update: {
+                            method: 'PUT'
+                        },
+                    });
+                }
+            })();
+        """
+    'Condominio Route':
+        'prefix': 'pc-route'
+        'body': """
+            .when('/${1.route}', {
+                templateUrl: '${2:template}',
+                title: '${3:title}',
+                controller: '${4:controller}',
+                controllerAs: 'vm',
+                access: {
+                    authorizedRoles: [USER_ROLES.${5:access_profiles}]
+                }
+            })
+        """

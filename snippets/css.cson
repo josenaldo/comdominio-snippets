@@ -1,0 +1,4 @@
+'.source.css':
+  'Example Snippet':
+    'prefix': 'ffl'
+    'body': 'font-family:${1:Helvetica}'
