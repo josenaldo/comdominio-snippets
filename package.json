@@ -1,26 +1,27 @@
 {
-  "name": "comdominio-snippets",
-  "version": "0.2.3",
-  "author": {
-    "name": "Josenaldo de Oliveira Matos Filho"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/josenaldo/comdominio-snippets.git"
-  },
-  "description": "Snippets do Condomínio Digital para o Atom.",
-  "keywords": [
-    "snippets",
-    "modules",
-    "templates"
-  ],
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "bugs": {
-    "url": "https://github.com/josenaldo/comdominio-snippets/issues"
-  },
-  "homepage": "https://github.com/josenaldo/comdominio-snippets",
-  "dependencies": {}
+    "name": "comdominio-snippets",
+    "version": "0.2.3",
+    "author": {
+        "name": "Josenaldo de Oliveira Matos Filho"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/josenaldo/comdominio-snippets.git"
+    },
+    "description": "Snippets do Condomínio Digital para o Atom.",
+    "keywords": [
+        "snippets",
+        "modules",
+        "templates"
+    ],
+    "license": "MIT",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    },
+    "bugs": {
+        "url": "https://github.com/josenaldo/comdominio-snippets/issues"
+    },
+    "homepage": "https://github.com/josenaldo/comdominio-snippets",
+    "dependencies": {}
+
 }
