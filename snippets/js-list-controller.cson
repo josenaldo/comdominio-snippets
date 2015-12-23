@@ -1,0 +1,88 @@
+'.source.js':
+    'List controller':
+        'prefix': 'pclistcontroller'
+        'body': """
+            (function() {
+                'use strict';
+
+                angular
+                    .module('${1:module}')
+                    .controller('List${2:Controller}', List${2:Controller});
+
+                List${2:Controller}.$inject = ['$scope', '${3:service}Service', 'API_BASE_URL'];
+
+                /* @ngInject */
+                function List${2:Controller}($scope, ${3:service}Service, API_BASE_URL) {
+                    var vm = this;
+
+                    vm.getRemoteUrl = getRemoteUrl;
+                    vm.onSelect = onSelect;
+                    vm.getConfirmMessage = getConfirmMessage;
+                    vm.remove = remove;
+
+                    activate();
+
+                    function activate() {
+                        vm.datatableControl = {};
+                        vm.confirmControl = {};
+                        initDatatableScope();
+                        initColumns();
+                    }
+
+                    function initDatatableScope() {
+                        vm.datatableScope = $scope.$new(true);
+                        vm.datatableScope.confirmDelete = function(id) {
+                            vm.confirmControl.open(id);
+                        }
+                    }
+
+                    function initColumns() {
+
+                        vm.columns = [{
+                            header: 'Código',
+                            property: 'id',
+                            order: true,
+                            type: "number"
+                        }, {
+                            header: 'Nome',
+                            property: 'name',
+                            order: true,
+                            type: "text"
+                        },
+                        {
+                            header: 'Ações',
+                            cellTemplate: 'actions-column.html',
+                            order: false,
+                        }];
+                    }
+
+                    function getRemoteUrl() {
+                        return API_BASE_URL + 'app/rest/${4:endPoint}';
+                    }
+
+                    function getConfirmMessage() {
+                        return "Tem certeza de que deseja remover ${5:descricaoEntidade} {{data}}?";
+                    }
+
+                    function onSelect(value) {
+                        $scope.selected = value.data;
+                    }
+
+                    function remove(data) {
+                        ${6:service}Service.delete({
+                                id: data
+                            }, {},
+                            function(value, responseHeaders) {
+                                vm.error = null;
+                                vm.success = 'OK';
+                                vm.datatableControl.applySearch();
+                            },
+                            function(error) {
+                                vm.success = null;
+                                vm.error = error;
+                            });
+                    }
+
+                }
+            })();
+        """

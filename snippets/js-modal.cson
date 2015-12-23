@@ -1,0 +1,22 @@
+'.source.js':
+    'Open Modal':
+        'prefix': 'pcmodal'
+        'body': """
+            function ${1:openModal}() {
+
+                var uibModalInstance = $uibModal.open({
+                    templateUrl: '${2:template}',
+                    controller: '${3:ModalInstanceController}',
+                    scope: $scope,
+                });
+
+                uibModalInstance.result.then(
+                    function(result) {
+
+                    },
+                    function() {
+
+                    });
+            }
+        }
+        """

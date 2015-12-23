@@ -1,0 +1,17 @@
+'.text.html':
+    'Create Page':
+        'prefix': 'pccreatepage'
+        'body': """
+            <div class="portlet">
+                <h4 class="portlet-title">
+                <ol class="breadcrumb">
+                    <li><a href="#/">Início</a></li>
+                    <li class="active">${1:titulo}</li>
+                </ol>
+                </h4>
+                <div class="portlet-body">
+                    <pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
+
+                </div>
+            </div>
+        """

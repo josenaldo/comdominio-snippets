@@ -1,0 +1,10 @@
+'.source.js':
+    'Valid form':
+        'prefix': 'pcvalidation'
+        'body': """
+            vm.form.$submmited = true;
+            if (vm.form.$invalid) {
+                $rootScope.$broadcast('show-errors-check-validity');
+                return;
+            }
+        """

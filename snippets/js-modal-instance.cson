@@ -1,0 +1,31 @@
+'.source.js':
+    'Modal instance controller':
+        'prefix': 'pcmodalinstance'
+        'body': """
+            angular
+                .module('comdominioApp')
+                .controller('${1:ModalInstanceController}', ${1:ModalInstanceController});
+
+            ${1:ModalInstanceController}.$inject = ['$scope', '$uibModalInstance'];
+
+            /* @ngInject */
+            function ${1:ModalInstanceController}($scope, $uibModalInstance) {
+                var vm = this;
+                vm.ok=ok;
+                vm.cancel=cancel;
+
+                activate();
+
+                function activate() {
+                    vm.resul = {};
+                }
+
+                function ok() {
+                    $uibModalInstance.close(vm.data);
+                };
+
+                function cancel() {
+                    $uibModalInstance.dismiss(vm.data);
+                };
+            }
+        """

@@ -1,9 +1,6 @@
 '.text.html':
-    'Show JSON':
-        'prefix': 'pcjson'
-        'body': '<pre class="col-md-12">{{vm.${1:object} | json}}</pre>'
     'List page':
-        'prefix':'pc-list-html'
+        'prefix':'pclistpage'
         'body':"""
             <div class="portlet">
                 <h4 class="portlet-title">
@@ -100,51 +97,4 @@
                     </form>
                 </div>
             </script>
-        """
-    'New Page':
-        'prefix': 'pc-page'
-        'body': """
-            <div class="portlet">
-                <h4 class="portlet-title">
-                <ol class="breadcrumb">
-                    <li><a href="#/">Início</a></li>
-                    <li class="active">${1:titulo}</li>
-                </ol>
-                </h4>
-                <div class="portlet-body">
-                    <pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
-
-                </div>
-            </div>
-        """
-    'Modal':
-        'prefix': 'pc-modal'
-        'body': """
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">${1:title}</h3>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
-                    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancelar</button>
-                </div>
-            </div>
-        """
-    'Form':
-        'prefix': 'pc-form'
-        'body': """
-            <form name="${1:formName}" role="form" class="form form-horizontal" novalidate show-validation >
-                <div ng-init="vm.${1:formName} = ${1:formName}"></div>
-                ${2}
-            </form>
-        """
-    'Form group':
-        'prefix': 'pc-form-group-input'
-        'body': """
-            <pc-form-group label="${1:label}" label-translate="${1:label}">
-                <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}" />
-            </pc-form-group>
         """
