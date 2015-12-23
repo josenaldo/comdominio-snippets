@@ -168,6 +168,8 @@
             /* @ngInject */
             function ${1:ModalInstanceController}($scope, $uibModalInstance) {
                 var vm = this;
+                vm.ok=ok;
+                vm.cancel=cancel;
 
                 activate();
 
@@ -175,12 +177,12 @@
                     vm.resul = {};
                 }
 
-                ok = function() {
-                    $uibModalInstance.close(vm.result);
+                function ok() {
+                    $uibModalInstance.close(vm.data);
                 };
 
-                cancel = function() {
-                    $uibModalInstance.dismiss(vm.resul);
+                function cancel() {
+                    $uibModalInstance.dismiss(vm.data);
                 };
             }
         """

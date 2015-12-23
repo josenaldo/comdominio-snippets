@@ -133,3 +133,18 @@
                 </div>
             </div>
         """
+    'Form':
+        'prefix': 'pc-form'
+        'body': """
+            <form name="${1:formName}" role="form" class="form form-horizontal" novalidate show-validation >
+                <div ng-init="vm.${1:formName} = ${1:formName}"></div>
+                ${2}
+            </form>
+        """
+    'Form group':
+        'prefix': 'pc-form-group-input'
+        'body': """
+            <pc-form-group label="${1:label}" label-translate="${1:label}">
+                <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}" />
+            </pc-form-group>
+        """
