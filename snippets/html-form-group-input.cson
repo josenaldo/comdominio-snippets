@@ -3,6 +3,8 @@
         'prefix': 'pcformgroupinput'
         'body': """
             <pc-form-group label="${1:label}" label-translate="${1:label}">
-                <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}" />
+                <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}"
+                    placeholder="{{'${4:placeholder}'}}"
+                    ng-minlength=${5:2} ng-maxlength=${6:255} required="${7:false}"/>
             </pc-form-group>
         """

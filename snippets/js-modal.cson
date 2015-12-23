@@ -6,7 +6,7 @@
 
                 var uibModalInstance = $uibModal.open({
                     templateUrl: '${2:template}',
-                    controller: '${3:ModalInstanceController}',
+                    controller: '${3:ModalInstanceController} as vm',
                     scope: $scope,
                 });
 

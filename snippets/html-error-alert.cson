@@ -1,0 +1,4 @@
+'.text.html':
+    'Show JSON':
+        'prefix': 'pcpre'
+        'body': '<pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>'
