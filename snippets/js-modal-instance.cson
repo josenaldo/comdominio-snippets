@@ -17,6 +17,7 @@
                 activate();
 
                 function activate() {
+                    vm.loading = false;
                     vm.resul = {};
                 }
 

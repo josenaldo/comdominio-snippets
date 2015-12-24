@@ -10,7 +10,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="button" ng-click="vm.ok()">OK</button>
+                    <pc-loading-button class="btn btn-primary" ng-click="vm.ok()" condition="vm.loading" label="Ok"></pc-loading-button>
                     <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancelar</button>
                 </div>
             </div>
