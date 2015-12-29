@@ -1,0 +1,8 @@
+'.text.html':
+    'Form group textarea':
+        'prefix': 'pcformgrouptextarea'
+        'body': """
+            <pc-form-group label="${1:label}" label-translate="${1:label}">
+                <textarea class="form-control" name="${2:name}" ng-model="vm.${3:model}" rows="4"></textarea>
+            </pc-form-group>
+        """
