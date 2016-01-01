@@ -1,5 +1,5 @@
 '.source.js':
-    'Call service':
+    'Call get':
         'prefix': 'pcget'
         'body': """
             ${1:serviceName}.get({
