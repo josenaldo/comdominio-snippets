@@ -1,15 +1,16 @@
 '.source.js':
-    'Call get':
-        'prefix': 'pcget'
+    'Call update':
+        'prefix': 'pcupdate'
         'body': """
-            ${1:serviceName}.get({
-                id:${2:$routeParams.id}
-                },
+            ${1:serviceName}.update(
+                vm.${2:object},
                 function(value, responseHeaders) {
                     vm.${3:value}=value;
+                    vm.success = 'OK';
                     vm.error = null;
                 },
                 function(error) {
+                    vm.success = null;
                     vm.error = error;
                 });
         """

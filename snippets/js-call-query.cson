@@ -1,10 +1,8 @@
 '.source.js':
-    'Call get':
-        'prefix': 'pcget'
+    'Call query':
+        'prefix': 'pcquery'
         'body': """
-            ${1:serviceName}.get({
-                id:${2:$routeParams.id}
-                },
+            ${1:serviceName}.query({},
                 function(value, responseHeaders) {
                     vm.${3:value}=value;
                     vm.error = null;
