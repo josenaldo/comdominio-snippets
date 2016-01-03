@@ -1,4 +1,4 @@
 '.text.html':
     'Error alert':
         'prefix': 'pcconfirm'
-        'body': '<pc-confirm confirm-control="vm.${1:confirmControl}" message="{{${2:vm.getConfirmMessage()}}" on-ok="${3:vm.onOkConfirm({data: data}})"/>'
+        'body': '<pc-confirm confirm-control="vm.${1:confirmControl}" message="{{${2:vm.getConfirmMessage()}}" on-ok="${3:vm.onOkConfirm({data: data}})"></pc-confirm>'
