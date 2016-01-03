@@ -1,0 +1,13 @@
+'.source.js':
+    'Call query':
+        'prefix': 'pcquery'
+        'body': """
+            ${1:serviceName}.query({},
+                function(value, responseHeaders) {
+                    vm.${3:value}=value;
+                    vm.error = null;
+                },
+                function(error) {
+                    vm.error = error;
+                });
+        """
