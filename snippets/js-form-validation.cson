@@ -5,7 +5,7 @@
             vm.form.$submmited = true;
             if (vm.form.$invalid) {
                 growl.error('Formulário inválido. Verifique todos os campos.');
-                $rootScope.$broadcast('show-errors-check-validity');
+                $scope.$broadcast('show-errors-check-validity');
                 return;
             }
         """
