@@ -33,7 +33,7 @@
                         vm.datatableScope = $scope.$new(true);
                         vm.datatableScope.confirmDelete = function(id) {
                             vm.confirmControl.open(id);
-                        }
+                        };
                     }
 
                     function initColumns() {

@@ -72,15 +72,15 @@
                         <div class="row form-group">
                             <div class="col-md-3">
                                 <pc-form-group label="Código" label-translate="Código">
-                                <input type="text" class="form-control" name="entityId" ng-model="vm.filters.entityId"
-                                    ui-number-mask="0" ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
+                                    <input type="text" class="form-control" name="entityId" ng-model="vm.filters.entityId"
+                                        ui-number-mask="0" ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
                                 </pc-form-group>
                             </div>
 
                             <div class="col-md-3">
                                 <pc-form-group label="Nome" label-translate="Nome">
-                                <input type="text" class="form-control" name="name" ng-model="vm.filters.name"
-                                    ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
+                                    <input type="text" class="form-control" name="name" ng-model="vm.filters.name"
+                                        ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
                                 </pc-form-group>
                             </div>
 
