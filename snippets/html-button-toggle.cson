@@ -1,4 +1,4 @@
 '.text.html':
     'Toggle Button':
         'prefix': 'pctogglebutton'
-        'body': '<pc-toggle-button condition="${1:condition}" icon-yes="${2:fa-plus}" label="${3.label}"></pc-toggle-button>'
+        'body': '<pc-toggle-button condition="${1:condition}" icon-yes="${2:fa-plus}" label="${3:label}"></pc-toggle-button>'
