@@ -6,12 +6,48 @@
                 <h4 class="portlet-title">
                 <ol class="breadcrumb">
                     <li><a href="#/">Início</a></li>
-                    <li class="active">${1:titulo}</li>
+                    <li class="active">${1:TITULO}</li>
                 </ol>
                 </h4>
                 <div class="portlet-body">
-                    <pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
+                    <div class="alert alert-success text-center" ng-show="vm.success">
+                        <strong>${2:MENSAGEM DE SUCESSO}</strong>
+                    </div>
+                    <div class="well well-sm text-center" ng-show="vm.success">
+                        <a class="btn btn-info" href="#/${3:CAMINHO PARA LISTA}">Lista de ${4:ENTIDADES}</a>
+                        <a class="btn btn-info" href="" ng-click="vm.reset()">Cadastrar nova ${5:ENTIDADE}</a>
+                    </div>
+                    <pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
 
+                    <div class="panel panel-default" ng-show="!vm.success">
+                        <div class="panel-heading">
+                            <strong>Dados da ${5:ENTIDADE}</strong>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form form-horizontal" name="formCreate" novalidate role="form" show-validation>
+                                <div ng-init="vm.form = formCreate"></div>
+
+                                <div class="form-group">
+
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-default" ng-show="!vm.success">
+                        <div class="panel-footer">
+                            <a class="btn btn-secondary" href="" ng-click="vm.save()">
+                                <i class="fa fa-floppy-o"></i>
+                                <span translate="action.save">Salvar</span>
+                            </a>
+                            <a class="btn btn-warning" href="#/${3:CAMINHO PARA LISTA}" type="button">
+                                <i class="fa fa-ban"></i>
+                                <span translate="action.cancel">Cancelar</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         """

@@ -1,0 +1,8 @@
+'.text.html':
+    'Form group input':
+        'prefix': 'pcformgroupselect'
+        'body': """
+            <div class="alert alert-success text-center" ng-show="vm.success">
+                <strong>${1:mensagem}</strong>
+            </div>
+        """
