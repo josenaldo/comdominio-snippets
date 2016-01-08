@@ -1,14 +1,14 @@
 '.source.js':
-    'Call update':
-        'prefix': 'pcupdate'
+    'Call save':
+        'prefix': 'pcsave'
         'body': """
-            ${1:serviceName}.update(
+            ${1:serviceName}.save(
                 vm.${2:object},
                 function(value, responseHeaders) {
                     vm.${3:value}=value;
                     vm.success = 'OK';
                     vm.error = null;
-                    grow.success("${4:Entidade} atualizad${5:o} com sucesso");
+                    grow.success("${4:Entidade} criad${5:o} com sucesso");
                 },
                 function(error) {
                     vm.success = null;
