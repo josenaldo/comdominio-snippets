@@ -1,11 +1,11 @@
 '.source.js':
-    'JS Doc':
-        'prefix': 'jsdoc'
-        'body': """
-            /**
-             * ${1:Description of what this does.}
-             *
-             * @param $2
-             * @returns $3
-             */
-        """
+  'JS Doc':
+    'prefix': 'jsdoc'
+    'body': """
+      /**
+       * ${1:Description of what this does.}
+       *
+       * @param $2
+       * @returns $3
+       */
+    """

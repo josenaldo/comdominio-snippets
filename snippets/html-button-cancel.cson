@@ -1,9 +1,9 @@
 '.text.html':
-    'Loading Button':
-        'prefix': 'pcloadingbutton'
-        'body': """
-            <a class="btn btn-warning" href="#/${1:path}" type="button">
-                <i class="fa fa-ban"></i>
-                <span translate="action.cancel">Cancelar</span>
-            </a>
-        """
+  'Cancel Button':
+    'prefix': 'pcloadingbutton'
+    'body': """
+      <a class="btn btn-warning" href="#/${1:path}" type="button">
+        <i class="fa fa-ban"></i>
+        <span translate="action.cancel">Cancelar</span>
+      </a>
+    """

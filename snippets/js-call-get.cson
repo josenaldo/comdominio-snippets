@@ -1,15 +1,15 @@
 '.source.js':
-    'Call get':
-        'prefix': 'pcget'
-        'body': """
-            ${1:serviceName}.get({
-                id:${2:$routeParams.id}
-                },
-                function(value, responseHeaders) {
-                    vm.${3:value}=value;
-                    vm.error = null;
-                },
-                function(error) {
-                    vm.error = error;
-                });
-        """
+  'Call get':
+    'prefix': 'pcget'
+    'body': """
+      ${1:serviceName}.get({
+        id:${2:$routeParams.id}
+        },
+        function(value, responseHeaders) {
+          vm.${3:value}=value;
+          vm.error = null;
+        },
+        function(error) {
+          vm.error = error;
+        });
+    """

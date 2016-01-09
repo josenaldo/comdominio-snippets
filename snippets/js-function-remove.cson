@@ -1,0 +1,20 @@
+'.source.js':
+  'Remove item from array':
+    'prefix': 'pcremovefunction'
+    'body': """
+      function remove${1:Entity}(item) {
+
+      var index = -1;
+
+      for (var i = 0; i < ${2:array}.length; i++) {
+        if (${2:array}[i].id === item.id) {
+          index = i;
+          break;
+        }
+      }
+
+      if (index != -1) {
+        ${2:array}.splice(index, 1);
+      }
+    }
+    """

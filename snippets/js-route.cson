@@ -1,14 +1,14 @@
 '.source.js':
-    'Condominio Route':
-        'prefix': 'pcroute'
-        'body': """
-            .when('/${1.route}', {
-                templateUrl: '${2:template}',
-                title: '${3:title}',
-                controller: '${4:controller}',
-                controllerAs: 'vm',
-                access: {
-                    authorizedRoles: [USER_ROLES.${5:access_profiles}]
-                }
-            })
-        """
+  'Condominio Route':
+    'prefix': 'pcroute'
+    'body': """
+      .when('/${1.route}', {
+        templateUrl: '${2:template}',
+        title: '${3:title}',
+        controller: '${4:controller}',
+        controllerAs: 'vm',
+        access: {
+          authorizedRoles: [USER_ROLES.${5:access_profiles}]
+        }
+      })
+    """

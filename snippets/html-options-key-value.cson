@@ -1,4 +1,4 @@
 '.text.html':
-    'Options - Key-Value':
-        'prefix': 'pcoptionskeyvalue'
-        'body': 'ng-options="key as value for (key, value) in vm.${1:options}"'
+  'Options - Key-Value':
+    'prefix': 'pcoptionskeyvalue'
+    'body': 'ng-options="key as value for (key, value) in vm.${1:options}"'

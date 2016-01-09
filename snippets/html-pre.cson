@@ -1,4 +1,4 @@
 '.text.html':
-    'Show JSON':
-        'prefix': 'pcpre'
-        'body': '<pre class="col-md-12">{{vm.${1:object} | json}}</pre>'
+  'Show JSON':
+    'prefix': 'pcpre'
+    'body': '<pre class="col-md-12">{{vm.${1:object} | json}}</pre>'

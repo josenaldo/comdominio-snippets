@@ -1,32 +1,32 @@
 '.source.js':
-    'Modal instance controller':
-        'prefix': 'pcmodalinstance'
-        'body': """
-            angular
-                .module('comdominioApp')
-                .controller('${1:ModalInstanceController}', ${1:ModalInstanceController});
+  'Modal instance controller':
+    'prefix': 'pcmodalinstance'
+    'body': """
+      angular
+        .module('comdominioApp')
+        .controller('${1:ModalInstanceController}', ${1:ModalInstanceController});
 
-            ${1:ModalInstanceController}.$inject = ['$scope', '$uibModalInstance'];
+      ${1:ModalInstanceController}.$inject = ['$scope', '$uibModalInstance'];
 
-            /* @ngInject */
-            function ${1:ModalInstanceController}($scope, $uibModalInstance) {
-                var vm = this;
-                vm.ok=ok;
-                vm.cancel=cancel;
+      /* @ngInject */
+      function ${1:ModalInstanceController}($scope, $uibModalInstance) {
+        var vm = this;
+        vm.ok=ok;
+        vm.cancel=cancel;
 
-                activate();
+        activate();
 
-                function activate() {
-                    vm.loading = false;
-                    vm.resul = {};
-                }
+        function activate() {
+          vm.loading = false;
+          vm.resul = {};
+        }
 
-                function ok() {
-                    $uibModalInstance.close(vm.data);
-                };
+        function ok() {
+          $uibModalInstance.close(vm.data);
+        };
 
-                function cancel() {
-                    $uibModalInstance.dismiss(vm.data);
-                };
-            }
-        """
+        function cancel() {
+          $uibModalInstance.dismiss(vm.data);
+        };
+      }
+    """

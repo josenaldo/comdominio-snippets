@@ -1,22 +1,22 @@
 '.source.js':
-    'Open Modal':
-        'prefix': 'pcmodal'
-        'body': """
-            function ${1:openModal}() {
+  'Open Modal':
+    'prefix': 'pcmodal'
+    'body': """
+      function ${1:openModal}() {
 
-                var uibModalInstance = $uibModal.open({
-                    templateUrl: '${2:template}',
-                    controller: '${3:ModalInstanceController} as vm',
-                    scope: $scope,
-                });
+        var uibModalInstance = $uibModal.open({
+          templateUrl: '${2:template}',
+          controller: '${3:ModalInstanceController} as vm',
+          scope: $scope,
+        });
 
-                uibModalInstance.result.then(
-                    function(result) {
+        uibModalInstance.result.then(
+          function(result) {
 
-                    },
-                    function() {
+          },
+          function() {
 
-                    });
-            }
-        }
-        """
+          });
+      }
+    }
+    """

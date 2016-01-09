@@ -1,4 +1,4 @@
 '.text.html':
-    'Loading Button':
-        'prefix': 'pcloadingbutton'
-        'body': '<pc-loading-button class="btn btn-secondary" ng-click="${1:vm.save()}" condition="${2:vm.loading}" label="${3:Salvar}" icon="${4:fa-save}"></pc-loading-button>'
+  'Loading Button':
+    'prefix': 'pcloadingbutton'
+    'body': '<pc-loading-button class="btn btn-secondary" ng-click="${1:vm.save()}" condition="${2:vm.loading}" label="${3:Salvar}" icon="${4:fa-save}"></pc-loading-button>'

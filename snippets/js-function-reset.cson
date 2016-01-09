@@ -1,0 +1,8 @@
+'.source.js':
+  'Add item in array':
+    'prefix': 'pcaddfunction'
+    'body': """
+      function reset() {
+        $route.reload();
+      }
+    """

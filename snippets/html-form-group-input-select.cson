@@ -1,8 +1,8 @@
 '.text.html':
-    'Form group input':
-        'prefix': 'pcformgroupselect'
-        'body': """
-            <pc-form-group label="${1:label}" label-translate="${1:label}">
-                <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}" />
-            </pc-form-group>
-        """
+  'Form group input select':
+    'prefix': 'pcformgroupselect'
+    'body': """
+      <pc-form-group label="${1:label}" label-translate="${1:label}">
+        <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}" />
+      </pc-form-group>
+    """
