@@ -2,7 +2,9 @@
   'Call update':
     'prefix': 'pcupdate'
     'body': """
-      ${1:serviceName}.update(
+      ${1:serviceName}.update( {
+            id: $routeParams.id
+        },
         vm.${2:object},
         function(value, responseHeaders) {
           vm.${3:value}=value;
