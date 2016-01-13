@@ -1,0 +1,20 @@
+'.source.js':
+    'Remove item from array':
+        'prefix': 'pcremoveitem'
+        'body': """
+            function removeItem(itemToRemove) {
+                var index = -1;
+
+                for (var i = 0; i <${1:array}.length; i++) {
+                    var item =${1:array}[i]
+                    if (item.${2:key} == itemToRemove.${2:key}) {
+                        index = i;
+                        break;
+                    }
+                }
+
+                if (index != -1) {
+                   ${1:array}.splice(index, 1);
+                }
+            }
+        """
