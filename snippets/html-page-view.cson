@@ -6,7 +6,9 @@
         <h4 class="portlet-title">
         <ol class="breadcrumb">
           <li><a href="#/">Início</a></li>
-          <li class="active">${1:TITULO}</li>
+          <li><a href="#/${1:caminhoRaiz}">${2:labelRaiz}</a></li>
+          <li><a href="#/${1:caminhoRaiz}/${3:caminhoLista}">${4:labelLista}</a></li>
+          <li class="active">Visualizar ${5:entidade} {{vm.${6:entity}.id}} </li>
         </ol>
         </h4>
         <div class="portlet-body">
@@ -14,7 +16,7 @@
 
           <div class="panel panel-default" ng-show="!vm.success">
             <div class="panel-heading">
-              <strong>Dados da ${5:ENTIDADE}</strong>
+              <strong>Dados da ${5:entidade}</strong>
             </div>
             <div class="panel-body">
 
@@ -24,13 +26,9 @@
 
           <div class="panel panel-default" ng-show="!vm.success">
             <div class="panel-footer">
-              <a class="btn btn-secondary" href="" ng-click="vm.save()">
-                <i class="fa fa-floppy-o"></i>
-                <span translate="action.save">Salvar</span>
-              </a>
-              <a class="btn btn-warning" href="#/${3:CAMINHO PARA LISTA}" type="button">
-                <i class="fa fa-ban"></i>
-                <span translate="action.cancel">Cancelar</span>
+              <a class="btn btn-info" href="#/${1:caminhoRaiz}/${3:caminhoLista}/{{vm.${6:entity}.id}}/editar">
+                <i class="fa fa-pencil"></i>
+                <span translate="action.edit">Editar</span>
               </a>
             </div>
           </div>
