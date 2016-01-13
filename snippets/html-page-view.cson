@@ -17,13 +17,7 @@
               <strong>Dados da ${5:ENTIDADE}</strong>
             </div>
             <div class="panel-body">
-                <div ng-init="vm.form = formCreate"></div>
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <strong>LABEL: </strong> {{vm.value}}
-                    </div>
-                </div>
             </div>
 
           </div>

@@ -2,7 +2,7 @@
   'Show Field':
     'prefix': 'pcdivfield'
     'body': """
-      <div class="col-md-12">
-        <strong>${1:LABEL}: </strong> {{vm.${2:value}}}
+      <div class="col-md-${1:1-12}">
+        <strong>${2:LABEL}: </strong> {{vm.${3:VALUE}}}
       </div>
     """
