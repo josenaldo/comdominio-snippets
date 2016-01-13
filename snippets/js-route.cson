@@ -2,7 +2,7 @@
   'Condominio Route':
     'prefix': 'pcroute'
     'body': """
-      .when('/${1.route}', {
+      .when('/${1:route}', {
         templateUrl: '${2:template}',
         title: '${3:title}',
         controller: '${4:controller}',

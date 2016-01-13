@@ -4,7 +4,7 @@
     'body': """
       ${1:serviceName}.query({},
         function(value, responseHeaders) {
-          vm.${3:value}=value;
+          vm.${2:value}=value;
           vm.error = null;
         },
         function(error) {

@@ -1,0 +1,8 @@
+'.text.html':
+  'Show Field':
+    'prefix': 'pcdivfield'
+    'body': """
+      <div class="col-md-12">
+        <strong>${1:LABEL}: </strong> {{vm.${2:value}}}
+      </div>
+    """

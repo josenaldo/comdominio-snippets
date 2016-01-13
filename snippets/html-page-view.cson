@@ -1,0 +1,45 @@
+'.text.html':
+  'View Page':
+    'prefix': 'pcviewpage'
+    'body': """
+      <div class="portlet">
+        <h4 class="portlet-title">
+        <ol class="breadcrumb">
+          <li><a href="#/">Início</a></li>
+          <li class="active">${1:TITULO}</li>
+        </ol>
+        </h4>
+        <div class="portlet-body">
+          <pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+
+          <div class="panel panel-default" ng-show="!vm.success">
+            <div class="panel-heading">
+              <strong>Dados da ${5:ENTIDADE}</strong>
+            </div>
+            <div class="panel-body">
+                <div ng-init="vm.form = formCreate"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>LABEL: </strong> {{vm.value}}
+                    </div>
+                </div>
+            </div>
+
+          </div>
+
+          <div class="panel panel-default" ng-show="!vm.success">
+            <div class="panel-footer">
+              <a class="btn btn-secondary" href="" ng-click="vm.save()">
+                <i class="fa fa-floppy-o"></i>
+                <span translate="action.save">Salvar</span>
+              </a>
+              <a class="btn btn-warning" href="#/${3:CAMINHO PARA LISTA}" type="button">
+                <i class="fa fa-ban"></i>
+                <span translate="action.cancel">Cancelar</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    """
