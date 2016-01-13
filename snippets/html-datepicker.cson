@@ -1,0 +1,17 @@
+'.text.html':
+  'Datepicker':
+    'prefix': 'pcdatepicker'
+    'body': """
+        <pc-form-group label-translate="${1:label}" label="${1:label}">
+            <p class="input-group">
+                <input class="form-control" name="${2:name}" clear-text="Limpar" close-text="Fechar"
+                    current-text="Hoje" is-open="vm.${2:name}Open" ng-model="vm.${2:name}"
+                    template-url="datepicker.html" type="text" uib-datepicker-popup="dd/MM/yyyy"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="vm.${2:name}Open=!vm.${2:name}Open" type="button">
+                        <i class="fa fa-calendar"></i>
+                    </button>
+                </span>
+            </p>
+        </pc-form-group>
+    """
