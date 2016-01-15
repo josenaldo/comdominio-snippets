@@ -1,0 +1,6 @@
+'.source.js':
+  'Condominio App Module':
+    'prefix': 'pcmodule'
+    'body': """
+        angular.module('comdominioApp')
+    """

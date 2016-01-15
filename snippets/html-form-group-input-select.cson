@@ -3,6 +3,9 @@
     'prefix': 'pcformgroupselect'
     'body': """
       <pc-form-group label="${1:label}" label-translate="${1:label}">
-        <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}" />
+        <select class="form-control" name="${2:name}" ng-model="vm.${3:model}"
+            ng-options="key as value for (key, value) in vm.${4:list}" required="false">
+                <option value="">Selecione um valor</option>
+        </select>
       </pc-form-group>
     """

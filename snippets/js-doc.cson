@@ -1,6 +1,6 @@
 '.source.js':
   'JS Doc':
-    'prefix': 'jsdoc'
+    'prefix': 'pcdoc'
     'body': """
       /**
        * ${1:Description of what this does.}
