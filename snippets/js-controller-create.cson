@@ -1,0 +1,66 @@
+'.source.js':
+	'List controller':
+		'prefix': 'pccreatecontroller'
+		'body': """
+			(function() {
+				'use strict';
+
+				angular
+					.module('${1:module}')
+					.controller('Create${2:Controller}', Create${2:Controller});
+
+				Create${2:Controller}.$inject = ['$scope', '$rootScope', '$route', 'growl' , '${3:service}Service'];
+
+				/* @ngInject */
+				function Create${2:Controller}( $scope, $rootScope, $route, growl, '${3:service}Service') {
+					var vm = this;
+
+					vm.reset = reset;
+                    vm.save = save;
+
+					activate();
+
+					function activate() {
+						initData();
+					}
+
+					function initData() {
+                        vm.${4:entity} = {
+
+                        };
+                    }
+
+                    function reset() {
+                        $route.reload();
+                    }
+
+                    function save() {
+                        vm.loading = true;
+                        vm.form.$submmited = true;
+
+                        if ( vm.form.$invalid ) {
+                            growl.error( 'Formulário inválido. Verifique todos os campos.' );
+                            $rootScope.$broadcast( 'show-errors-check-validity' );
+                            vm.loading = false;
+                            return;
+                        }
+
+                        ${3:service}Service.save(
+                            vm.${4:entity},
+                            function ( value, responseHeaders ) {
+                                vm.${4:entity} = value;
+                                vm.success = 'OK';
+                                vm.error = null;
+                                growl.success( '${4:entity} criado com sucesso' );
+                                vm.loading = false;
+                            },
+                            function ( error ) {
+                                vm.success = null;
+                                vm.error = error;
+                                vm.loading = false;
+                            } );
+                    }
+
+				}
+			})();
+		"""

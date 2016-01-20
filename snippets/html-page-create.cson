@@ -1,53 +1,52 @@
 '.text.html':
-  'Create Page':
-    'prefix': 'pccreatepage'
-    'body': """
-      <div class="portlet">
-        <h4 class="portlet-title">
-        <ol class="breadcrumb">
-          <li><a href="#/">Início</a></li>
-          <li class="active">${1:TITULO}</li>
-        </ol>
-        </h4>
-        <div class="portlet-body">
-          <div class="alert alert-success text-center" ng-show="vm.success">
-            <strong>${2:MENSAGEM DE SUCESSO}</strong>
-          </div>
-          <div class="well well-sm text-center" ng-show="vm.success">
-            <a class="btn btn-info" href="#/${3:CAMINHO PARA LISTA}">Lista de ${4:ENTIDADES}</a>
-            <a class="btn btn-info" href="" ng-click="vm.reset()">Cadastrar nova ${5:ENTIDADE}</a>
-          </div>
-          <pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+	'Create Page':
+		'prefix': 'pccreatepage'
+		'body': """
+			<div class="portlet">
+				<h4 class="portlet-title">
+				<ol class="breadcrumb">
+					<li><a href="#/">Início</a></li>
+					<li><a href="#/${1:caminhoRaiz}">${2:labelRaiz}</a></li>
+					<li><a href="#/${1:caminhoRaiz}/${3:caminhoLista}">${4:labelLista}</a></li>
+					<li class="active">Criar ${5:entidade} </li>
+				</ol>
+				</h4>
+				<div class="portlet-body">
+					<div class="alert alert-success text-center" ng-show="vm.success">
+						<strong>${5:entidade} cadastrado com sucesso.</strong>
+					</div>
+					<div class="well well-sm text-center" ng-show="vm.success">
+						<a class="btn btn-info" href="#/${3:caminhoLista}">Lista de ${6:entidades}</a>
+						<a class="btn btn-info" href="" ng-click="vm.reset()">Cadastrar nova ${5:entidade}</a>
+					</div>
+					<pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
 
-          <div class="panel panel-default" ng-show="!vm.success">
-            <div class="panel-heading">
-              <strong>Dados da ${5:ENTIDADE}</strong>
-            </div>
-            <div class="panel-body">
-              <form class="form form-horizontal" name="formCreate" novalidate role="form" show-validation>
-                <div ng-init="vm.form = formCreate"></div>
+					<div class="panel panel-default" ng-show="!vm.success">
+						<div class="panel-heading">
+							<strong>Dados do ${5:entidade}</strong>
+						</div>
+						<div class="panel-body">
+							<form class="form form-horizontal" name="formCreate" novalidate role="form" show-validation>
+								<div ng-init="vm.form = formCreate"></div>
 
-                <div class="form-group">
+								<div class="form-group">
 
-                </div>
+								</div>
+							</form>
+						</div>
+					</div>
 
-              </form>
-            </div>
+					<div class="panel panel-default" ng-show="!vm.success">
+						<div class="panel-footer">
+                            <pc-loading-button class="btn btn-secondary" ng-click="${7:vm.save()}"
+                                condition="${8:vm.loading}" label="${9:Salvar}" icon="${10:fa-save}"></pc-loading-button>
 
-          </div>
-
-          <div class="panel panel-default" ng-show="!vm.success">
-            <div class="panel-footer">
-              <a class="btn btn-secondary" href="" ng-click="vm.save()">
-                <i class="fa fa-floppy-o"></i>
-                <span translate="action.save">Salvar</span>
-              </a>
-              <a class="btn btn-warning" href="#/${3:CAMINHO PARA LISTA}" type="button">
-                <i class="fa fa-ban"></i>
-                <span translate="action.cancel">Cancelar</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    """
+							<a class="btn btn-warning" href="#/${3:caminhoLista}" type="button">
+								<i class="fa fa-ban"></i>
+								<span translate="action.cancel">Cancelar</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		"""
