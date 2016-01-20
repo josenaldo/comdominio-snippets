@@ -1,22 +1,22 @@
 '.source.js':
 	'List controller':
-		'prefix': 'pccreatecontroller'
+		'prefix': 'pceditcontroller'
 		'body': """
 			(function() {
 				'use strict';
 
 				angular
 					.module('${1:module}')
-					.controller('Create${2:Controller}', Create${2:Controller});
+					.controller('Edit${2:Controller}', Edit${2:Controller});
 
-				Create${2:Controller}.$inject = ['$scope', '$rootScope', '$route', 'growl' , '${3:service}Service'];
+				Edit${2:Controller}.$inject = ['$scope', '$rootScope',$routeParams, '$route', 'growl' , '${3:service}Service'];
 
 				/* @ngInject */
-				function Create${2:Controller}( $scope, $rootScope, $route, growl, ${3:service}Service) {
+				function Edit${2:Controller}( $scope, $rootScope, $routeParams, $route, growl, ${3:service}Service) {
 					var vm = this;
 
 					vm.reset = reset;
-					vm.save = save;
+					vm.update = update;
 
 					activate();
 
@@ -25,16 +25,23 @@
 					}
 
 					function initData() {
-						vm.${4:entity} = {
-
-						};
+						${3:service}Service.get( {
+		                    id: $routeParams.id
+		                },
+		                function ( value, responseHeaders ) {
+		                    vm.${4:entity} = value;
+		                    vm.error = null;
+		                },
+		                function ( error ) {
+		                    vm.error = error;
+		                } );
 					}
 
 					function reset() {
 						$route.reload();
 					}
 
-					function save() {
+					function update() {
 						vm.loading = true;
 						vm.form.$submmited = true;
 
@@ -45,7 +52,7 @@
 							return;
 						}
 
-						${3:service}Service.save(
+						${3:service}Service.update(
 						vm.${4:entity},
 						function ( value, responseHeaders ) {
 							vm.${4:entity} = value;

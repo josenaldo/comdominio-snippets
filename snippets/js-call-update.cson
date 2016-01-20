@@ -1,19 +1,19 @@
 '.source.js':
-  'Call update':
-    'prefix': 'pcupdate'
-    'body': """
-      ${1:serviceName}.update( {
-            id: $routeParams.id
-        },
-        vm.${2:object},
-        function(value, responseHeaders) {
-          vm.${3:value}=value;
-          vm.success = 'OK';
-          vm.error = null;
-          growl.success('${4:Entidade} atualizad${5:o} com sucesso');
-        },
-        function(error) {
-          vm.success = null;
-          vm.error = error;
-        });
-    """
+	'Call update':
+		'prefix': 'pcupdate'
+		'body': """
+			${1:serviceName}.update( {
+						id: $routeParams.id
+				},
+				vm.${2:object},
+				function(value, responseHeaders) {
+					vm.${3:value}=value;
+					vm.success = 'OK';
+					vm.error = null;
+					growl.success('${4:Entidade} atualizad${5:o} com sucesso');
+				},
+				function(error) {
+					vm.success = null;
+					vm.error = error;
+				});
+		"""
