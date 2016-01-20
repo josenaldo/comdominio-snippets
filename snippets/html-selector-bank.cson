@@ -1,0 +1,7 @@
+'.text.html':
+  'Bank Selector':
+    'prefix': 'pcbankselector'
+    'body': '''
+        <pc-bank-selector label="${1:label}" ng-model="vm.${2:model}"
+        on-select="vm.${3:selectBank}(item, model, label)" required="${4:true}"></pc-bank-selector>
+    '''

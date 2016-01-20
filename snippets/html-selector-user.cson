@@ -1,0 +1,7 @@
+'.text.html':
+  'User Selector':
+    'prefix': 'pcuserselector'
+    'body': '''
+        <pc-user-selector label="${1:label}" ng-model="vm.${2:model}"
+        on-select="vm.${3:selectUser}(item, model, label)" required="${4:true}"></pc-user-selector>
+    '''
