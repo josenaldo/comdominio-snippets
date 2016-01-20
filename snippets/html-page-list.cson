@@ -1,100 +1,101 @@
 '.text.html':
-  'List page':
-    'prefix':'pclistpage'
-    'body':"""
-      <div class="portlet">
-        <h4 class="portlet-title">
-        <ol class="breadcrumb">
-          <li><a href="#/">Início</a></li>
-          <li class="active">${1:titulo}</li>
-        </ol>
-        </h4>
-        <div class="portlet-body" >
-          <pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
+	'List page':
+		'prefix':'pclistpage'
+		'body':"""
+			<div class="portlet">
+				<h4 class="portlet-title">
+				<ol class="breadcrumb">
+					<li><a href="#/">Início</a></li>
+					<li><a href="#/${1:caminhoRaiz}">${2:labelRaiz}</a></li>
+					<li class="active">Lista de ${3:entidade} </li>
+				</ol>
+				</h4>
+				<div class="portlet-body" >
+					<pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
 
-          <pc-data-table-remote
-            url="vm.getRemoteUrl()"
-            on-select="vm.onSelect(value)"
-            columns="vm.columns"
-            datatable-scope="vm.datatableScope"
-            datatable-control="vm.datatableControl"
-            search-filters-template="filters.html"
-            extra="extra.html">
-          </pc-data-table-remote>
+					<pc-data-table-remote
+						url="vm.getRemoteUrl()"
+						on-select="vm.onSelect(value)"
+						columns="vm.columns"
+						datatable-scope="vm.datatableScope"
+						datatable-control="vm.datatableControl"
+						search-filters-template="filters.html"
+						extra="extra.html">
+					</pc-data-table-remote>
 
-          <pc-confirm ng-if="vm.confirmControl" confirm-control="vm.confirmControl" message="{{vm.getConfirmMessage()}}" on-ok="vm.remove(data)"/>
-        </div>
-      </div>
+					<pc-confirm ng-if="vm.confirmControl" confirm-control="vm.confirmControl" message="{{vm.getConfirmMessage()}}" on-ok="vm.remove(data)"/>
+				</div>
+			</div>
 
-      <script type="text/ng-template" id="extra.html">
-        <a class="btn btn-info" href="#/${2:caminho}/cadastrar" title="Cadastrar">
-          <i class="fa fa-plus"></i> Cadastrar
-        </a>
-      </script>
+			<script type="text/ng-template" id="extra.html">
+				<a class="btn btn-info" href="#/${1:caminhoRaiz}/${4:caminhoLista}/cadastrar" title="Cadastrar">
+					<i class="fa fa-plus"></i> Cadastrar
+				</a>
+			</script>
 
-      <script type="text/ng-template" id="actions-column.html">
-        <div class="text-center">
-          <a class="btn btn-info" href="#/${2:caminho}/{{item.id}}" title="Visualizar">
-            <i class="fa fa-eye"></i>
-          </a>
-          <a class="btn btn-warning" href="#/${2:caminho}/{{item.id}}/editar" title="Editar">
-            <i class="fa fa-pencil"></i>
-          </a>
-          <a class="btn btn-danger" href="" ng-click="datatableScope.confirmDelete({{item.id}})" title="Remover">
-            <i class="fa fa-remove"></i>
-          </a>
-        </div>
-      </script>
+			<script type="text/ng-template" id="actions-column.html">
+				<div class="text-center">
+					<a class="btn btn-info" href="#/${1:caminhoRaiz}/${4:caminhoLista}/{{item.id}}" title="Visualizar">
+						<i class="fa fa-eye"></i>
+					</a>
+					<a class="btn btn-warning" href="#/${1:caminhoRaiz}/${4:caminhoLista}/{{item.id}}/editar" title="Editar">
+						<i class="fa fa-pencil"></i>
+					</a>
+					<a class="btn btn-danger" href="" ng-click="datatableScope.confirmDelete({{item.id}})" title="Remover">
+						<i class="fa fa-remove"></i>
+					</a>
+				</div>
+			</script>
 
-      <script type="text/ng-template" id="filters.html">
-        <div class="well form-datatable">
-          <form name="formFilter" role="form" novalidate show-validation class="form" >
-            <div ng-init="form = formFilter"></div>
+			<script type="text/ng-template" id="filters.html">
+				<div class="well form-datatable">
+					<form name="formFilter" role="form" novalidate show-validation class="form" >
+						<div ng-init="form = formFilter"></div>
 
-            <div class="row">
-              <div class="col-md-12">
-                <h4>Pesquisa</h4>
-              </div>
-            </div>
+						<div class="row">
+							<div class="col-md-12">
+								<h4>Pesquisa</h4>
+							</div>
+						</div>
 
-            <div class="row form-group">
-              <div class="col-md-12">
-                <label>Critérios</label>
-              </div>
-              <div class="col-md-4">
-                <div class="btn-group btn-group-justified" role="group">
-                  <label class="btn btn-info" ng-model="vm.filters.criteriaInclude" uib-btn-radio="'ALL'">Todos</label>
-                  <label class="btn btn-info" ng-model="vm.filters.criteriaInclude" uib-btn-radio="'ANY'">Qualquer um</label>
-                </div>
-              </div>
-            </div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label>Critérios</label>
+							</div>
+							<div class="col-md-4">
+								<div class="btn-group btn-group-justified" role="group">
+									<label class="btn btn-info" ng-model="vm.filters.criteriaInclude" uib-btn-radio="'ALL'">Todos</label>
+									<label class="btn btn-info" ng-model="vm.filters.criteriaInclude" uib-btn-radio="'ANY'">Qualquer um</label>
+								</div>
+							</div>
+						</div>
 
-            <div class="row form-group">
-              <div class="col-md-3">
-                <pc-form-group label="Código" label-translate="Código">
-                  <input type="text" class="form-control" name="entityId" ng-model="vm.filters.entityId"
-                    ui-number-mask="0" ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
-                </pc-form-group>
-              </div>
+						<div class="row form-group">
+							<div class="col-md-3">
+								<pc-form-group label="Código" label-translate="Código">
+									<input type="text" class="form-control" name="${5:entityId}" ng-model="vm.filters.${5:entityId}"
+										ui-number-mask="0" ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
+								</pc-form-group>
+							</div>
 
-              <div class="col-md-3">
-                <pc-form-group label="Nome" label-translate="Nome">
-                  <input type="text" class="form-control" name="name" ng-model="vm.filters.name"
-                    ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
-                </pc-form-group>
-              </div>
+							<div class="col-md-3">
+								<pc-form-group label="Nome" label-translate="Nome">
+									<input type="text" class="form-control" name="name" ng-model="vm.filters.name"
+										ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
+								</pc-form-group>
+							</div>
 
-            </div>
+						</div>
 
-            <div class="modal-footer">
-              <button class="btn btn-secondary" ng-click="vm.datatableControl.applySearch()">
-                <i class="fa fa-search"></i> Pesquisar
-              </button>
-              <button class="btn btn-warning" ng-click="vm.datatableControl.cancelSearch()">
-                <i class="fa fa-ban"></i> Cancelar
-              </button>
-            </div>
-          </form>
-        </div>
-      </script>
-    """
+						<div class="modal-footer">
+							<button class="btn btn-secondary" ng-click="vm.datatableControl.applySearch()">
+								<i class="fa fa-search"></i> Pesquisar
+							</button>
+							<button class="btn btn-warning" ng-click="vm.datatableControl.cancelSearch()">
+								<i class="fa fa-ban"></i> Cancelar
+							</button>
+						</div>
+					</form>
+				</div>
+			</script>
+		"""

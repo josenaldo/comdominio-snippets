@@ -2,6 +2,6 @@
   'Agent Selector':
     'prefix': 'pcuagentselector'
     'body': '''
-        <pc-agent-selector label="${1:label}" ng-model="vm.${2:model}"
+        <pc-agent-selector class="col-md-12" label="${1:label}" ng-model="vm.${2:model}"
         on-select="vm.${3:selectAgent}(item, model, label)" required="${4:true}"></pc-agent-selector>
     '''
