@@ -9,7 +9,7 @@
 					.module('${1:module}')
 					.controller('Edit${2:Controller}', Edit${2:Controller});
 
-				Edit${2:Controller}.$inject = ['$scope', '$rootScope',$routeParams, '$route', 'growl' , '${3:service}Service'];
+				Edit${2:Controller}.$inject = ['$scope', '$rootScope', '$routeParams', '$route', 'growl' , '${3:service}Service'];
 
 				/* @ngInject */
 				function Edit${2:Controller}( $scope, $rootScope, $routeParams, $route, growl, ${3:service}Service) {

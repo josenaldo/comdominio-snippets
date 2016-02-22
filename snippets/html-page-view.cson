@@ -16,7 +16,7 @@
 
           <div class="panel panel-default" ng-show="!vm.success">
             <div class="panel-heading">
-              <strong>Dados da ${5:entidade}</strong>
+              <h3 class="panel-title">Dados da ${5:entidade}</h3>
             </div>
             <div class="panel-body">
 
