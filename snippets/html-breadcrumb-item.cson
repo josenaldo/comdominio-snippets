@@ -1,4 +1,0 @@
-'.text.html':
-  'Options - Key-Value':
-    'prefix': 'pcoptionskeyvalue'
-    'body': '<li><a href="#/${1:path}">${2:label}</a></li>'

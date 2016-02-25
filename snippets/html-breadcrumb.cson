@@ -1,0 +1,9 @@
+'.text.html':
+  'Breadcrumb':
+    'prefix': 'pcbreadcrumb'
+    'body': """
+        <pc-breadcrumb>
+            ${1}
+        <pc-breadcrumb>
+
+    """

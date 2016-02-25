@@ -1,0 +1,4 @@
+'.text.html':
+  'Breadcrumb Item Href':
+    'prefix': 'pcbreadcrumbhref'
+    'body': '<pc-breadcrumb-item text="${1:text}" href="${2:#/path}"></pc-breadcrumb-item>'
