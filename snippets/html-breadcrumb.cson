@@ -4,6 +4,5 @@
     'body': """
         <pc-breadcrumb>
             ${1}
-        <pc-breadcrumb>
-
+        </pc-breadcrumb>
     """
