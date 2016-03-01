@@ -1,0 +1,4 @@
+'.text.html':
+  'Breadcrumb Item Início':
+    'prefix': 'pcbreadcrumbinicio'
+    'body': '<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>'
