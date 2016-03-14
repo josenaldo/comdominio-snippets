@@ -53,6 +53,7 @@
 						}
 
 						${3:service}Service.update(
+						{id: $routeParams.id},
 						vm.${4:entity},
 						function ( value, responseHeaders ) {
 							vm.${4:entity} = value;
