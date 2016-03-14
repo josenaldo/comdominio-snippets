@@ -3,5 +3,5 @@
     'prefix': 'pcplantable'
     'body': """
       <pc-plan-table plan-type="${1:planType}" on-select="vm.${2:onSelectSubscriptionPlan}(selectedSubscriptionPlan)"
-        ng-model="vm.${3:selectedSubscriptionPlan}" column="${4:column}" margin-column="${4:marginColumn}"></pc-plan-table>
+        ng-model="vm.${3:selectedSubscriptionPlan}" column="${4:column}" margin-column="${5:marginColumn}"></pc-plan-table>
     """
