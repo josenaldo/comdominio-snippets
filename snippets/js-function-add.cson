@@ -1,15 +1,15 @@
 '.source.js':
-  'Add item in array':
-    'prefix': 'pcaddfunction'
-    'body': """
-      function ${1:addItem}( ${2:item} ) {
-        for ( var i = 0; i < ${3:array}.length; i++ ) {
-          if ( ${3:array}[ i ].id === ${2:item}.id ) {
-            growl.warning( 'Serviço ' + ${2:item}.id + ' já foi adicionado' );
-            return;
-          }
-        }
+    'Add item in array':
+        'prefix': 'pcaddfunction'
+        'body': """
+            function ${1:addItem}( ${2:item} ) {
+                for ( var i = 0; i < ${3:array}.length; i++ ) {
+                    if ( ${3:array}[ i ].id === ${2:item}.id ) {
+                        growl.warning( '${4:Item} ' + ${2:item}.id + ' já foi adicionado' );
+                        return;
+                    }
+                }
 
-        ${3:array}.push( ${2:item} );
-      };
-    """
+                ${3:array}.push( ${2:item} );
+            };
+            """
