@@ -1,37 +1,36 @@
 '.text.html':
-  'View Page':
-    'prefix': 'pcviewpage'
-    'body': """
-      <div class="portlet">
-        <h4 class="portlet-title">
-        <ol class="breadcrumb">
-          <li><a href="#/">Início</a></li>
-          <li><a href="#/${1:caminhoRaiz}">${2:labelRaiz}</a></li>
-          <li><a href="#/${1:caminhoRaiz}/${3:caminhoLista}">${4:labelLista}</a></li>
-          <li class="active">Visualizar ${5:entidade} {{vm.${6:entity}.id}} </li>
-        </ol>
-        </h4>
-        <div class="portlet-body">
-          <pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+    'View Page':
+        'prefix': 'pcviewpage'
+        'body': """
+            <div class="portlet">
+                <h4 class="portlet-title">
+                    <pc-breadcrumb>
+                        <pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
+                        <pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
+                        <pc-breadcrumb-item text="${3:labelLista}" href="#/${2:caminhoRaiz}/${4:caminhoLista}"></pc-breadcrumb-item>
+                        <pc-breadcrumb-item text="Visualizar ${5:entidade} {{${6:entity.id}}}" active="true"></pc-breadcrumb-item>
+                    </pc-breadcrumb>
+                </h4>
 
-          <div class="panel panel-default" ng-show="!vm.success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Dados da ${5:entidade}</h3>
+                <div class="portlet-body">
+                    <pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+
+                    <div class="panel panel-default" ng-show="!vm.success">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Dados da ${5:entidade}</h3>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default" ng-show="!vm.success">
+                        <div class="panel-footer">
+                            <a class="btn btn-info" href="#/${2:caminhoRaiz}/${4:caminhoLista}/{{vm.${6:entity}.id}}/editar">
+                                <i class="fa fa-pencil"></i> <span translate="action.edit">Editar</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="panel-body">
-
-            </div>
-
-          </div>
-
-          <div class="panel panel-default" ng-show="!vm.success">
-            <div class="panel-footer">
-              <a class="btn btn-info" href="#/${1:caminhoRaiz}/${3:caminhoLista}/{{vm.${6:entity}.id}}/editar">
-                <i class="fa fa-pencil"></i>
-                <span translate="action.edit">Editar</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    """
+        """

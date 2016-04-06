@@ -4,11 +4,11 @@
 		'body':"""
 			<div class="portlet">
 				<h4 class="portlet-title">
-				<ol class="breadcrumb">
-					<li><a href="#/">Início</a></li>
-					<li><a href="#/${1:caminhoRaiz}">${2:labelRaiz}</a></li>
-					<li class="active">Lista de ${3:entidade} </li>
-				</ol>
+					<pc-breadcrumb>
+						<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
+						<pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
+						<pc-breadcrumb-item text="Lista ${3:entidades}" active="true"></pc-breadcrumb-item>
+					</pc-breadcrumb>
 				</h4>
 				<div class="portlet-body" >
 					<pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
@@ -28,17 +28,17 @@
 			</div>
 
 			<script type="text/ng-template" id="extra.html">
-				<a class="btn btn-info" href="#/${1:caminhoRaiz}/${4:caminhoLista}/cadastrar" title="Cadastrar">
+				<a class="btn btn-info" href="#/${2:caminhoRaiz}/${4:caminhoLista}/cadastrar" title="Cadastrar">
 					<i class="fa fa-plus"></i> Cadastrar
 				</a>
 			</script>
 
 			<script type="text/ng-template" id="actions-column.html">
 				<div class="text-center">
-					<a class="btn btn-info" href="#/${1:caminhoRaiz}/${4:caminhoLista}/{{item.id}}" title="Visualizar">
+					<a class="btn btn-info" href="#/${2:caminhoRaiz}/${4:caminhoLista}/{{item.id}}" title="Visualizar">
 						<i class="fa fa-eye"></i>
 					</a>
-					<a class="btn btn-warning" href="#/${1:caminhoRaiz}/${4:caminhoLista}/{{item.id}}/editar" title="Editar">
+					<a class="btn btn-warning" href="#/${2:caminhoRaiz}/${4:caminhoLista}/{{item.id}}/editar" title="Editar">
 						<i class="fa fa-pencil"></i>
 					</a>
 					<a class="btn btn-danger" href="" ng-click="datatableScope.confirmDelete({{item.id}})" title="Remover">

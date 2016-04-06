@@ -4,12 +4,12 @@
 		'body': """
 			<div class="portlet">
 				<h4 class="portlet-title">
-				<ol class="breadcrumb">
-					<li><a href="#/">Início</a></li>
-					<li><a href="#/${1:caminhoRaiz}">${2:labelRaiz}</a></li>
-					<li><a href="#/${1:caminhoRaiz}/${3:caminhoLista}">${4:labelLista}</a></li>
-					<li class="active">Editar {{${entity.id}}} </li>
-				</ol>
+					<pc-breadcrumb>
+						<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
+						<pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
+						<pc-breadcrumb-item text="${3:labelLista}" href="#/${2:caminhoRaiz}/${4:caminhoLista}"></pc-breadcrumb-item>
+						<pc-breadcrumb-item text="Editar ${5:entidade} {{${6:entity.id}}}" active="true"></pc-breadcrumb-item>
+					</pc-breadcrumb>
 				</h4>
 				<div class="portlet-body">
 					<div class="alert alert-success text-center" ng-show="vm.success">
@@ -25,9 +25,6 @@
 							<form class="form form-horizontal" name="formEdit" novalidate role="form" show-validation>
 								<div ng-init="vm.form = formEdit"></div>
 
-								<div class="form-group">
-
-								</div>
 							</form>
 						</div>
 
@@ -35,7 +32,7 @@
 							<pc-loading-button class="btn btn-secondary" ng-click="${7:vm.update()}"
 								condition="${8:vm.loading}" label="${9:Salvar}" icon="${10:fa-save}"></pc-loading-button>
 
-							<a class="btn btn-warning" href="#/${3:caminhoLista}" type="button">
+							<a class="btn btn-warning" href="#/${2:caminhoRaiz}/${4:caminhoLista}" type="button">
 								<i class="fa fa-ban"></i>
 								<span>Voltar</span>
 							</a>
