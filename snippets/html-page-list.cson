@@ -59,18 +59,6 @@
 						</div>
 
 						<div class="row form-group">
-							<div class="col-md-12">
-								<label>Critérios</label>
-							</div>
-							<div class="col-md-4">
-								<div class="btn-group btn-group-justified" role="group">
-									<label class="btn btn-info" ng-model="vm.filters.criteriaInclude" uib-btn-radio="'ALL'">Todos</label>
-									<label class="btn btn-info" ng-model="vm.filters.criteriaInclude" uib-btn-radio="'ANY'">Qualquer um</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="row form-group">
 							<div class="col-md-3">
 								<pc-form-group label="Código" label-translate="Código">
 									<input type="text" class="form-control" name="${5:entityId}" ng-model="vm.filters.${5:entityId}"

@@ -1,39 +1,39 @@
 '.source.js':
-  'View controller':
-    'prefix': 'pcviewcontroller'
-    'body': """
-      (function() {
-        'use strict';
+    'View controller':
+        'prefix': 'pcviewcontroller'
+        'body': """
+            (function() {
+                'use strict';
 
-        angular
-          .module('${1:module}')
-          .controller('View${2:Controller}', View${2:Controller});
+                angular
+                    .module('${1:module}')
+                    .controller('View${2:Controller}', View${2:Controller});
 
-        View${2:Controller}.$inject = ['$scope','$routeParams', 'growl', '${3:service}Service'];
+                View${2:Controller}.$inject = ['$scope','$routeParams', 'growl', '${3:service}Service'];
 
-        /* @ngInject */
-        function View${2:Controller}($scope, $routeParams, growl, ${3:service}Service) {
-          var vm = this;
+                /* @ngInject */
+                function View${2:Controller}($scope, $routeParams, growl, ${3:service}Service) {
+                    var vm = this;
 
-          activate();
+                    activate();
 
-          function activate() {
-            initData();
-          }
+                    function activate() {
+                        initData();
+                    }
 
-          function initData() {
-            ${3:service}Service.get({
-              id: $routeParams.id
-            },
-            function(value, responseHeaders) {
-              vm.${4:value} = value;
-              vm.error = null;
-            },
-            function(error) {
-              vm.error = error;
-            });
-          }
+                    function initData() {
+                        ${3:service}Service.get({
+                            id: $routeParams.id
+                        },
+                        function(value, responseHeaders) {
+                            vm.${4:value} = value;
+                            vm.error = null;
+                        },
+                        function(error) {
+                            vm.error = error;
+                        });
+                     }
 
-        }
-      })();
-    """
+                }
+            })();
+        """

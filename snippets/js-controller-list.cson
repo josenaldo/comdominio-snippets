@@ -65,11 +65,11 @@
 					}
 
 					function onSelect(value) {
-						$scope.selected = value.data;
+						vm.selected = value.data;
 					}
 
 					function remove(data) {
-						${6:service}Service.delete({
+						${3:service}Service.delete({
 								id: data
 							}, {},
 							function(value, responseHeaders) {
