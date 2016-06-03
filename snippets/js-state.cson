@@ -1,0 +1,21 @@
+'.source.js':
+    'State':
+        'prefix': 'pcstate'
+        'body': """
+            (function() {
+                'use strict';
+
+                angular
+                    .module('${1:module}')
+                    .config('StateConfig', StateConfig);
+
+                StateConfig.$inject = ['$stateProvider'];
+
+                function StateConfig($stateProvider) {
+                    $stateProvider.state('${2:state}', {
+                        url: '${3:url}',
+                        templateUrl: '${4:templateUrl}'
+                    });
+                }
+            })();
+        """

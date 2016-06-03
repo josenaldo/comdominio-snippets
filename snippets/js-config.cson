@@ -1,6 +1,6 @@
 '.source.js':
-    'Resource':
-        'prefix': 'pcresource'
+    'Confi':
+        'prefix': 'pcconfig'
         'body': """
             (function() {
                 'use strict';
@@ -9,7 +9,7 @@
                     .module('${1:module}')
                     .config('${2:Config}', ${2:Config});
 
-                ${2:Config}.$inject = [${3:dependencies}];
+                ${2:Config}.$inject = ['${3:dependencies}'];
 
                 function ${2:Config}(${3:dependencies}) {
                     ${4}
