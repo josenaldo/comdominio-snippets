@@ -1,0 +1,18 @@
+'.source.js':
+    'Resource':
+        'prefix': 'pcresource'
+        'body': """
+            (function() {
+                'use strict';
+
+                angular
+                    .module('${1:module}')
+                    .config('${2:Config}', ${2:Config});
+
+                ${2:Config}.$inject = [${3:dependencies}];
+
+                function ${2:Config}(${3:dependencies}) {
+                    ${4}
+                }
+            })();
+        """
