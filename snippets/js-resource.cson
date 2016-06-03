@@ -1,29 +1,28 @@
 '.source.js':
-  'Resource':
-    'prefix': 'pcresource'
-    'body': """
-      (function() {
-        'use strict';
+    'Resource':
+        'prefix': 'pcresource'
+        'body': """
+            (function() {
+                'use strict';
 
-        angular
-          .module('${1:module}')
-          .service('${2:Service}', ${2:Service});
+                angular
+                    .module('${1:module}')
+                    .service('${2:Service}', ${2:Service});
 
-        ${2:Service}.$inject = ['$resource', 'API_BASE_URL'];
+                ${2:Service}.$inject = ['$resource', 'API_BASE_URL'];
 
-        /* @ngInject */
-        function ${2:Service}($resource, API_BASE_URL) {
-          return $resource(API_BASE_URL + 'app/rest/${3:endpoint}/:id/:action', {
-            id: '@id',
-            action: '@action'
-          }, {
-            query: {
-              isArray: false
-            },
-            update: {
-              method: 'PUT'
-            },
-          });
-        }
-      })();
-    """
+                function ${2:Service}($resource, API_BASE_URL) {
+                    return $resource(API_BASE_URL + 'app/rest/${3:endpoint}/:id/:action', {
+                        id: '@id',
+                        action: '@action'
+                    }, {
+                        query: {
+                            isArray: false
+                        },
+                        update: {
+                            method: 'PUT'
+                        },
+                    });
+                }
+            })();
+        """
