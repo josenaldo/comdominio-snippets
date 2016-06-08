@@ -14,7 +14,20 @@
                 function StateConfig($stateProvider) {
                     $stateProvider.state('${2:state}', {
                         url: '${3:url}',
-                        templateUrl: '${4:templateUrl}'
+                        views: {
+                            'content@': {
+                                templateUrl: '${4:viewTemplateUrl}',
+                                controller: '${5:viewController}',
+                                controllerAs: 'vm',
+                            }
+                        },
+                        data: {
+                            authorities: [
+                                ${6:USER_ROLES.all}
+                            ],
+                            pageTitle: '${7:pageTitle}'
+                        },
+
                     });
                 }
             })();
