@@ -1,0 +1,10 @@
+'.text.html':
+  'Show JSON Tree':
+    'prefix': 'pcjsontree'
+    'body': """
+        <div class="container">
+            <div class="card">
+                <json-tree object="vm.${1:object}"></json-tree>
+            </div>
+        </div>
+    """

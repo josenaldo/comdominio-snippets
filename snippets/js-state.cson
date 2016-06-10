@@ -7,11 +7,11 @@
 
                 angular
                     .module('${1:module}')
-                    .config('StateConfig', StateConfig);
+                    .config(${2:StateConfig});
 
-                StateConfig.$inject = ['$stateProvider'];
+                ${2:StateConfig}.$inject = ['$stateProvider', 'USER_ROLES'];
 
-                function StateConfig($stateProvider) {
+                function ${2:StateConfig}($stateProvider, USER_ROLES) {
                     $stateProvider.state('${2:state}', {
                         url: '${3:url}',
                         views: {
