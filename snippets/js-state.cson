@@ -12,20 +12,21 @@
                 ${2:StateConfig}.$inject = ['$stateProvider', 'USER_ROLES'];
 
                 function ${2:StateConfig}($stateProvider, USER_ROLES) {
-                    $stateProvider.state('${2:state}', {
-                        url: '${3:url}',
+                    $stateProvider.state('${3:state}', {
+                        parent: 'app',
+                        url: '${4:url}',
                         views: {
                             'content@': {
-                                templateUrl: '${4:viewTemplateUrl}',
-                                controller: '${5:viewController}',
+                                templateUrl: '${5:viewTemplateUrl}',
+                                controller: '${6:viewController}',
                                 controllerAs: 'vm',
                             }
                         },
                         data: {
                             authorities: [
-                                ${6:USER_ROLES.all}
+                                ${7:USER_ROLES.all}
                             ],
-                            pageTitle: '${7:pageTitle}'
+                            pageTitle: '${8:pageTitle}'
                         },
 
                     });

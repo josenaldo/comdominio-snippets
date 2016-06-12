@@ -3,6 +3,7 @@
     'prefix': 'pcbreadcrumb'
     'body': """
         <pc-breadcrumb>
+            <pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
             ${1}
         </pc-breadcrumb>
     """
