@@ -1,6 +1,6 @@
 '.text.html':
   'Form':
-    'prefix': 'pc-form'
+    'prefix': 'pcform'
     'body': """
       <form name="${1:formName}" role="form" class="form form-horizontal" novalidate show-validation >
         <div ng-init="vm.form = ${1:formName}"></div>
