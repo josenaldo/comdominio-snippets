@@ -2,28 +2,38 @@
 	'List page':
 		'prefix':'pclistpage'
 		'body':"""
-			<div class="portlet">
-				<h4 class="portlet-title">
-					<pc-breadcrumb>
-						<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
-						<pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
-						<pc-breadcrumb-item text="Lista ${3:entidades}" active="true"></pc-breadcrumb-item>
-					</pc-breadcrumb>
-				</h4>
-				<div class="portlet-body" >
-					<pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
+			<div class="container">
+				<pc-breadcrumb>
+					<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
+					<pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
+					<pc-breadcrumb-item text="Lista ${3:entidades}" active="true"></pc-breadcrumb-item>
+				</pc-breadcrumb>
 
-					<pc-data-table-remote
-						url="vm.getRemoteUrl()"
-						on-select="vm.onSelect(value)"
-						columns="vm.columns"
-						datatable-scope="vm.datatableScope"
-						datatable-control="vm.datatableControl"
-						search-filters-template="filters.html"
-						extra="extra.html">
-					</pc-data-table-remote>
+				<div class="card ch-alt m-b-20">
+					<div class="card-header ch-alt m-b-20">
+						<div class="hidden-xs">
+							<h2>Dados da ${5:entidade} </h2>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 
-					<pc-confirm ng-if="vm.confirmControl" confirm-control="vm.confirmControl" message="{{vm.getConfirmMessage()}}" on-ok="vm.remove(data)"/>
+					<div class="card-body card-padding">
+						<pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>
+
+						<pc-data-table-remote
+							url="vm.getRemoteUrl()"
+							on-select="vm.onSelect(value)"
+							columns="vm.columns"
+							datatable-scope="vm.datatableScope"
+							datatable-control="vm.datatableControl"
+							search-filters-template="filters.html"
+							extra="extra.html">
+						</pc-data-table-remote>
+
+						<pc-confirm ng-if="vm.confirmControl" confirm-control="vm.confirmControl" message="{{vm.getConfirmMessage()}}" on-ok="vm.remove(data)"/>
+
+						<div class="clearfix"></div>
+					</div>
 				</div>
 			</div>
 
@@ -76,7 +86,7 @@
 						</div>
 
 						<div class="modal-footer">
-							<button class="btn btn-secondary" ng-click="vm.datatableControl.applySearch()">
+							<button class="btn btn-primary" ng-click="vm.datatableControl.applySearch()">
 								<i class="fa fa-search"></i> Pesquisar
 							</button>
 							<button class="btn btn-warning" ng-click="vm.datatableControl.cancelSearch()">

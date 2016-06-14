@@ -2,35 +2,56 @@
     'View Page':
         'prefix': 'pcviewpage'
         'body': """
-            <div class="portlet">
-                <h4 class="portlet-title">
-                    <pc-breadcrumb>
-                        <pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
-                        <pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
-                        <pc-breadcrumb-item text="${3:labelLista}" href="#/${2:caminhoRaiz}/${4:caminhoLista}"></pc-breadcrumb-item>
-                        <pc-breadcrumb-item text="Visualizar ${5:entidade} {{${6:entity.id}}}" active="true"></pc-breadcrumb-item>
-                    </pc-breadcrumb>
-                </h4>
+            <div class="container">
+				<pc-breadcrumb>
+					<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
+                    <pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
+                    <pc-breadcrumb-item text="${3:labelLista}" href="#/${2:caminhoRaiz}/${4:caminhoLista}"></pc-breadcrumb-item>
+                    <pc-breadcrumb-item text="Visualizar ${5:entidade} {{${6:entity.id}}}" active="true"></pc-breadcrumb-item>
+				</pc-breadcrumb>
 
-                <div class="portlet-body">
-                    <pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+				<div class="card ch-alt m-b-20">
+					<div class="card-header ch-alt m-b-20">
+						<div class="hidden-xs">
+							<h2>Dados da ${5:entidade} </h2>
+						</div>
+						<div class="clearfix"></div>
+					</div>
 
-                    <div class="panel panel-default" ng-show="!vm.success">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Dados da ${5:entidade}</h3>
-                        </div>
-                        <div class="panel-body">
+					<div class="card-body card-padding">
+						<div class="alert alert-success text-center" ng-show="vm.success">
+							<h3>${5:entidade} criada com sucesso.</h3>
+						</div>
 
-                        </div>
-                    </div>
+						<div class="well well-sm text-center" ng-show="vm.success">
+							<a class="btn btn-info" href="#/${2:caminhoRaiz}/${4:caminhoLista}">Lista de ${6:entidades}</a>
+							<a class="btn btn-info" href="" ng-click="vm.reset()">Cadastrar nova ${5:entidade}</a>
+						</div>
 
-                    <div class="panel panel-default" ng-show="!vm.success">
-                        <div class="panel-footer">
-                            <a class="btn btn-info" href="#/${2:caminhoRaiz}/${4:caminhoLista}/{{vm.${6:entity}.id}}/editar">
-                                <i class="fa fa-pencil"></i> <span translate="action.edit">Editar</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+						<pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+
+						<form class="form" name="formCreate" novalidate role="form" show-validation>
+							<div ng-init="vm.form = formCreate"></div>
+
+							<div class="row">
+
+							</div>
+						</form>
+
+						<hr class="m-t-25">
+						<div class="pull-right">
+
+							<pc-loading-button class="btn btn-primary" ng-click="${7:vm.save()}"
+								condition="${8:vm.loading}" label="${9:Salvar}" icon="${10:fa-save}"></pc-loading-button>
+
+							<a class="btn btn-warning" href="#/${2:caminhoRaiz}/${4:caminhoLista}" type="button">
+								<i class="fa fa-ban"></i>
+								<span translate="action.cancel">Cancelar</span>
+							</a>
+
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
         """

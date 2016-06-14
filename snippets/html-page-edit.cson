@@ -2,42 +2,49 @@
 	'Create Page':
 		'prefix': 'pceditpage'
 		'body': """
-			<div class="portlet">
-				<h4 class="portlet-title">
-					<pc-breadcrumb>
-						<pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
-						<pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
-						<pc-breadcrumb-item text="${3:labelLista}" href="#/${2:caminhoRaiz}/${4:caminhoLista}"></pc-breadcrumb-item>
-						<pc-breadcrumb-item text="Editar ${5:entidade} {{${6:entity.id}}}" active="true"></pc-breadcrumb-item>
-					</pc-breadcrumb>
-				</h4>
-				<div class="portlet-body">
-					<div class="alert alert-success text-center" ng-show="vm.success">
-						<h3 class="panel-title">${5:entidade} atualizado com sucesso.</h3>
-					</div>
-					<pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+			<div class="container">
+			    <pc-breadcrumb>
+			        <pc-breadcrumb-item text="Início" href="#/"></pc-breadcrumb-item>
+			        <pc-breadcrumb-item text="${1:labelRaiz}" href="#/${2:caminhoRaiz}"></pc-breadcrumb-item>
+					<pc-breadcrumb-item text="${3:labelLista}" href="#/${2:caminhoRaiz}/${4:caminhoLista}"></pc-breadcrumb-item>
+					<pc-breadcrumb-item text="Editar ${5:entidade} {{${6:entity.id}}}" active="true"></pc-breadcrumb-item>
+			    </pc-breadcrumb>
 
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h3 class="panel-title">Dados do ${5:entidade}</h3>
-						</div>
-						<div class="panel-body">
-							<form class="form form-horizontal" name="formEdit" novalidate role="form" show-validation>
-								<div ng-init="vm.form = formEdit"></div>
+			    <div class="card ch-alt m-b-20">
+			        <div class="card-header ch-alt m-b-20">
+			            <div class="hidden-xs">
+			                <h2>Dados do ${5:entidade} </h2>
+			            </div>
+			            <div class="clearfix"></div>
+			        </div>
 
-							</form>
+			        <div class="card-body card-padding">
+			            <div class="alert alert-success text-center" ng-show="vm.success">
+							<h3>${5:entidade} atualizado com sucesso.</h3>
 						</div>
 
-						<div class="panel-footer">
-							<pc-loading-button class="btn btn-secondary" ng-click="${7:vm.update()}"
+						<pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
+
+						<form class="form" name="formEdit" novalidate role="form" show-validation>
+							<div ng-init="vm.form = formEdit"></div>
+
+			                <div class="row">
+
+			                </div>
+			            </form>
+
+			            <hr class="m-t-25">
+			            <div class="pull-right">
+							<pc-loading-button class="btn btn-primary" ng-click="${7:vm.update()}"
 								condition="${8:vm.loading}" label="${9:Salvar}" icon="${10:fa-save}"></pc-loading-button>
 
 							<a class="btn btn-warning" href="#/${2:caminhoRaiz}/${4:caminhoLista}" type="button">
-								<i class="fa fa-ban"></i>
-								<span>Voltar</span>
+								<i class="fa fa-ban"></i> <span>Voltar</span>
 							</a>
-						</div>
-					</div>
-				</div>
+
+			            </div>
+			            <div class="clearfix"></div>
+			        </div>
+			    </div>
 			</div>
 		"""
