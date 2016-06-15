@@ -1,0 +1,8 @@
+'.text.html':
+  'Card':
+    'prefix': 'pccard'
+    'body': """
+        <div class="card">
+            ${1}
+        </div>
+    """
