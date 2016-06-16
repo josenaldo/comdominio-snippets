@@ -9,10 +9,10 @@
                     .module('${1:module}')
                     .controller('View${2:Controller}', View${2:Controller});
 
-                View${2:Controller}.$inject = ['$scope','$routeParams', 'growl', '${3:service}Service'];
+                View${2:Controller}.$inject = ['$scope','$stateParams', '${3:service}Service'];
 
                 /* @ngInject */
-                function View${2:Controller}($scope, $routeParams, growl, ${3:service}Service) {
+                function View${2:Controller}($scope, $stateParams, ${3:service}Service) {
                     var vm = this;
 
                     activate();
@@ -23,7 +23,7 @@
 
                     function initData() {
                         ${3:service}Service.get({
-                            id: $routeParams.id
+                            id: $stateParams.id
                         },
                         function(value, responseHeaders) {
                             vm.${4:value} = value;

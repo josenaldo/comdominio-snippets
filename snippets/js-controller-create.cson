@@ -9,10 +9,10 @@
 					.module('${1:module}')
 					.controller('Create${2:Controller}', Create${2:Controller});
 
-				Create${2:Controller}.$inject = ['$scope', '$rootScope', '$route', 'growl' , '${3:service}Service'];
+				Create${2:Controller}.$inject = ['$scope', '$rootScope', '$state', 'growlService' , '${3:service}Service'];
 
 				/* @ngInject */
-				function Create${2:Controller}( $scope, $rootScope, $route, growl, ${3:service}Service) {
+				function Create${2:Controller}( $scope, $rootScope, $state, growlService, ${3:service}Service) {
 					var vm = this;
 
 					vm.reset = reset;
@@ -39,7 +39,7 @@
 						vm.form.$submmited = true;
 
 						if ( vm.form.$invalid ) {
-							growl.error( 'Formulário inválido. Verifique todos os campos.' );
+							growlService.error( 'Formulário inválido. Verifique todos os campos.' );
 							$rootScope.$broadcast( 'show-errors-check-validity' );
 							vm.loading = false;
 							return;
@@ -51,7 +51,7 @@
 							vm.${4:entity} = value;
 							vm.success = 'OK';
 							vm.error = null;
-							growl.success( '${4:entity} criado com sucesso' );
+							growlService.success( '${4:entity} criado com sucesso' );
 							vm.loading = false;
 						},
 						function ( error ) {
