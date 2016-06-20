@@ -4,7 +4,10 @@
         'body': """
             <div class="card">
                 <div class="card-header">
-                    ${1:header_or_bradcrumb}
+                    <div class="hidden-xs">
+                        <h2>${1:title}</h2>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="card-body card-padding">
                     ${2:form_or_content}
