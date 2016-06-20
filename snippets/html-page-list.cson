@@ -30,7 +30,8 @@
 							extra="extra.html">
 						</pc-data-table-remote>
 
-						<pc-confirm ng-if="vm.confirmControl" confirm-control="vm.confirmControl" message="{{vm.getConfirmMessage()}}" on-ok="vm.remove(data)"/>
+						<pc-confirm ng-if="vm.confirmControl" confirm-control="vm.confirmControl"
+							message="{{vm.getConfirmMessage()}}" on-ok="vm.remove(data)"></pc-confirm>
 
 						<div class="clearfix"></div>
 					</div>

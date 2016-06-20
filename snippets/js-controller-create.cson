@@ -51,7 +51,7 @@
 							vm.${4:entity} = value;
 							vm.success = 'OK';
 							vm.error = null;
-							growlService.success( '${4:entity} criado com sucesso' );
+							growlService.success( '${4:entity} cadastrado com sucesso' );
 							vm.loading = false;
 						},
 						function ( error ) {

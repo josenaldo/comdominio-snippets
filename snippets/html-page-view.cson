@@ -13,7 +13,7 @@
 				<div class="card">
 					<div class="card-header">
 						<div class="hidden-xs">
-							<h2>Dados da ${5:entidade} </h2>
+							<h2>Dados da ${5:entidade} </h2> <small></small>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -22,16 +22,15 @@
 						<pc-error-alert error="vm.error" ng-show="vm.error"></pc-error-alert>
 
 						${7:content}
-						<hr>
-						<div class="pull-right">
 
+                        <hr>
+						<div class="pull-right">
 							<a class="btn btn-primary" href="#/${2:caminhoRaiz}/${4:caminhoLista}/${6:entity.id}/editar" type="button">
 								<i class="fa fa-pencil"></i> Editar
 							</a>
 							<a class="btn btn-warning" href="#/${2:caminhoRaiz}/${4:caminhoLista}" type="button">
 								<i class="fa fa-ban"></i> Cancelar
 							</a>
-
 						</div>
 						<div class="clearfix"></div>
 					</div>
