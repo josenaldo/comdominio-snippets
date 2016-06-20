@@ -1,0 +1,8 @@
+'.source.js':
+    'Confi':
+        'prefix': 'pcconfig'
+        'body': """
+            angular.module( '${1:comdominioApp}' ).constant( '${2:constantName}', {
+                '${3:constantKey}': '${4:constanValue}',
+            } );
+        """

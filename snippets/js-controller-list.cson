@@ -6,7 +6,7 @@
 				'use strict';
 
 				angular
-					.module('${1:module}')
+					.module('${1:comdominioApp}')
 					.controller('List${2:Controller}', List${2:Controller});
 
 				List${2:Controller}.$inject = ['$scope', '${3:service}Service', 'API_BASE_URL'];

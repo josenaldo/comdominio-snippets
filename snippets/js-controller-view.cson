@@ -6,7 +6,7 @@
                 'use strict';
 
                 angular
-                    .module('${1:module}')
+                    .module('${1:comdominioApp}')
                     .controller('View${2:Controller}', View${2:Controller});
 
                 View${2:Controller}.$inject = ['$scope','$stateParams', '${3:service}Service'];

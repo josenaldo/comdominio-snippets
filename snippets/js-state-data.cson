@@ -6,7 +6,7 @@
                 'use strict';
 
                 angular
-                    .module('${1:module}')
+                    .module('${1:comdominioApp}')
                     .config('StateConfig', StateConfig);
 
                 StateConfig.$inject = ['$stateProvider'];

@@ -6,7 +6,7 @@
                 'use strict';
 
                 angular
-                    .module('${1:module}')
+                    .module('${1:comdominioApp}')
                     .config(${2:StateConfig});
 
                 ${2:StateConfig}.$inject = ['$stateProvider', 'USER_ROLES'];

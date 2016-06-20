@@ -6,7 +6,7 @@
 				'use strict';
 
 				angular
-					.module('${1:module}')
+					.module('${1:comdominioApp}')
 					.controller('Edit${2:Controller}', Edit${2:Controller});
 
 				Edit${2:Controller}.$inject = ['$scope', '$rootScope', '$stateParams', '$state', 'growlService' , '${3:service}Service'];

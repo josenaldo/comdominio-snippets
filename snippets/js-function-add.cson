@@ -5,7 +5,7 @@
             function ${1:addItem}( ${2:item} ) {
                 for ( var i = 0; i < ${3:array}.length; i++ ) {
                     if ( ${3:array}[ i ].id === ${2:item}.id ) {
-                        growl.warning( '${4:Item} ' + ${2:item}.id + ' já foi adicionado' );
+                        growlService.warning( '${4:Item} ' + ${2:item}.id + ' já foi adicionado' );
                         return;
                     }
                 }

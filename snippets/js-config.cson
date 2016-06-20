@@ -6,7 +6,7 @@
                 'use strict';
 
                 angular
-                    .module('${1:module}')
+                    .module('${1:comdominioApp}')
                     .config('${2:Config}', ${2:Config});
 
                 ${2:Config}.$inject = ['${3:dependencies}'];

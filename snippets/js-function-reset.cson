@@ -3,6 +3,6 @@
     'prefix': 'pcresetfunction'
     'body': """
       function reset() {
-        $route.reload();
+        $state.reload();
       }
     """

@@ -6,7 +6,7 @@
                 'use strict';
 
                 angular
-                    .module('${1:module}')
+                    .module('${1:comdominioApp}')
                     .service('${2:Service}', ${2:Service});
 
                 ${2:Service}.$inject = ['$resource', 'API_BASE_URL'];

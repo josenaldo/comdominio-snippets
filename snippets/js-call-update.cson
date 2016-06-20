@@ -3,14 +3,14 @@
 		'prefix': 'pcupdate'
 		'body': """
 			${1:serviceName}.update( {
-						id: $routeParams.id
+					id: $routeParams.id
 				},
 				vm.${2:object},
 				function(value, responseHeaders) {
 					vm.${3:value}=value;
 					vm.success = 'OK';
 					vm.error = null;
-					growl.success('${4:Entidade} atualizad${5:o} com sucesso');
+					growlService.success('${4:Entidade} atualizad${5:o} com sucesso');
 				},
 				function(error) {
 					vm.success = null;
