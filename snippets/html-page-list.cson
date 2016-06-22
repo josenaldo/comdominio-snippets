@@ -59,6 +59,45 @@
 			</script>
 
 			<script type="text/ng-template" id="filters.html">
+				<div class="card">
+				    <div class="card-header">
+				        <h4>Pesquisa</h4>
+				    </div>
+				    <div class="card-body card-padding">
+				        <form name="formFilter" role="form" novalidate show-validation class="form" >
+							<div ng-init="form = formFilter"></div>
+
+							<div class="row">
+								<div class="col-md-3">
+									<pc-form-group label="Código" ng-model="vm.filters.${5:entityId}">
+										<input type="text" class="form-control" name="${5:entityId}" ng-model="vm.filters.${5:entityId}"
+											ui-number-mask="0" ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
+									</pc-form-group>
+								</div>
+
+								<div class="col-md-3">
+									<pc-form-group label="Nome" ng-model="vm.filters.name">
+										<input type="text" class="form-control" name="name" ng-model="vm.filters.name"
+											ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
+									</pc-form-group>
+								</div>
+							</div>
+						</form>
+				        <hr>
+				        <div class="pull-right">
+				            <button class="btn btn-primary" ng-click="vm.datatableControl.applySearch()">
+								<i class="fa fa-search"></i> Pesquisar
+							</button>
+							<button class="btn btn-warning" ng-click="vm.datatableControl.cancelSearch()">
+								<i class="fa fa-ban"></i> Cancelar
+							</button>
+				        </div>
+				        <div class="clearfix"></div>
+				    </div>
+				</div>
+
+
+
 				<div class="well form-datatable">
 					<form name="formFilter" role="form" novalidate show-validation class="form" >
 						<div ng-init="form = formFilter"></div>
@@ -69,7 +108,7 @@
 							</div>
 						</div>
 
-						<div class="row form-group">
+						<div class="row">
 							<div class="col-md-3">
 								<pc-form-group label="Código" label-translate="Código">
 									<input type="text" class="form-control" name="${5:entityId}" ng-model="vm.filters.${5:entityId}"
