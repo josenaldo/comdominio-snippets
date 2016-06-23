@@ -1,0 +1,8 @@
+'.text.html':
+  'Card Header':
+    'prefix': 'pccardbody'
+    'body': """
+        <div class="card-body card-padding">
+            ${1:content}
+        </div>
+    """

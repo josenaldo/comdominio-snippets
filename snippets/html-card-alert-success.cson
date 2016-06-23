@@ -1,0 +1,12 @@
+'.text.html':
+  'Card Header':
+    'prefix': 'pccardalertsuccess'
+    'body': """
+        <div class="card" ng-show="vm.success">
+            <div class="card-body card-padding">
+                <div class="alert alert-success text-center">
+                    ${1:Evento} com sucesso.
+                </div>
+            </div>
+        </div>
+    """

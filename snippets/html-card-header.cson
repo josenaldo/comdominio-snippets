@@ -1,0 +1,9 @@
+'.text.html':
+  'Card Header':
+    'prefix': 'pccardheader'
+    'body': """
+        <div class="card-header">
+            <h2>${1:header}</h2>
+            <div class="clearfix"></div>
+        </div>
+    """

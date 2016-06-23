@@ -1,0 +1,10 @@
+'.text.html':
+  'Card Header':
+    'prefix': 'pccardfooter'
+    'body': """
+        <hr>
+        <div class="pull-right">
+
+        </div>
+        <div class="clearfix"></div>
+    """
