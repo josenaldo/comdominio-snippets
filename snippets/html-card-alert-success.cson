@@ -1,5 +1,5 @@
 '.text.html':
-  'Card Header':
+  'Card Alert Success':
     'prefix': 'pccardalertsuccess'
     'body': """
         <div class="card" ng-show="vm.success">

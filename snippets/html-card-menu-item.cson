@@ -1,0 +1,8 @@
+'.text.html':
+  'Card Menu Item':
+    'prefix': 'pccardmenuitem'
+    'body': """
+        <li>
+            <a class="text-left" ui-sref="${1:item state}">${2:item text}</a>
+        </li>
+    """

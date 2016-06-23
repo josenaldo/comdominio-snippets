@@ -1,0 +1,23 @@
+'.text.html':
+  'Card Menu':
+    'prefix': 'pccardmenu'
+    'body': """
+        <ul class="actions">
+            <li>
+                <a ui-sref="${1:state}">
+                    <i class="fa ${2:icon}"></i>
+                </a>
+            </li>
+            <li class="dropdown" uib-dropdown>
+                <a href="" uib-dropdown-toggle>
+                    <i class="fa fa-ellipsis-v"></i>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-right ">
+                    <li>
+                        <a class="text-left" ui-sref="${3:item state}">${4:item text}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    """

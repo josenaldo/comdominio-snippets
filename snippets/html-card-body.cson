@@ -1,5 +1,5 @@
 '.text.html':
-  'Card Header':
+  'Card Body':
     'prefix': 'pccardbody'
     'body': """
         <div class="card-body card-padding">

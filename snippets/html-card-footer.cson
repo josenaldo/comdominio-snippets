@@ -1,5 +1,5 @@
 '.text.html':
-  'Card Header':
+  'Card Footer':
     'prefix': 'pccardfooter'
     'body': """
         <hr>

@@ -1,0 +1,8 @@
+'.text.html':
+  'Card Header Button':
+    'prefix': 'pccardheaderbutton'
+    'body': """
+        <li>
+            <a ui-sref="${1:state}"><i class="fa ${2:icon}"></i></a>
+        </li>
+    """
