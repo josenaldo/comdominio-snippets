@@ -2,7 +2,7 @@
   'Card Header':
     'prefix': 'pccardheader'
     'body': """
-        <div class="card-header">
+        <div class="card-header ch-alt">
             <h2>${1:header}</h2>
             <div class="clearfix"></div>
         </div>
