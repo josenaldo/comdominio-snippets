@@ -11,7 +11,7 @@
 				</pc-breadcrumb>
 
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header ch-alt">
 						<h2>Dados da ${5:entidade}  <small></small></h2>
 						<div class="clearfix"></div>
 					</div>

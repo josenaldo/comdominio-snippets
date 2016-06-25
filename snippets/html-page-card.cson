@@ -3,7 +3,7 @@
         'prefix': 'pcpagecard'
         'body': """
             <div class="card">
-                <div class="card-header">
+                <div class="card-header ch-alt">
                     <div class="hidden-xs">
                         <h2>${1:title}</h2>
                     </div>
