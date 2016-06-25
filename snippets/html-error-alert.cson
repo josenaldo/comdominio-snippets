@@ -1,4 +1,4 @@
 '.text.html':
   'Error alert':
-    'prefix': 'pcpre'
+    'prefix': 'pcalerterror'
     'body': '<pc-error-alert error="vm.error" ng-show="vm.error" ></pc-error-alert>'
