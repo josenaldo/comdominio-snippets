@@ -1,9 +1,9 @@
 '.text.html':
-  'Form group input text':
-    'prefix': 'pcformgroupinput'
-    'body': """
-      <pc-form-group label="${1:label}">
-        <input type="text" class="form-control" name="${2:name}" ng-model="vm.${3:model}"
-          ng-minlength=${5:2} ng-maxlength=${6:255} required="${7:false}"/>
-      </pc-form-group>
-    """
+    'Form group input text':
+        'prefix': 'pcformgroupinput'
+        'body': """
+            <pc-form-group label="${1:label}" ng-model="vm.${2:model}">
+                <input type="text" class="form-control" name="${3:name}" ng-model="vm.${2:model}"
+                    ng-minlength=${4:2} ng-maxlength=${5:255} required="${6:false}"/>
+            </pc-form-group>
+        """

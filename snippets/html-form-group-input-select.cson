@@ -1,11 +1,10 @@
 '.text.html':
-  'Form group input select':
-    'prefix': 'pcformgroupselect'
-    'body': """
-      <pc-form-group label="${1:label}">
-        <select class="form-control" name="${2:name}" ng-model="vm.${3:model}"
-            ng-options="key as value for (key, value) in vm.${4:list}" required="false">
-                <option value="">Selecione um valor</option>
-        </select>
-      </pc-form-group>
-    """
+    'Form group input select':
+        'prefix': 'pcformgroupselect'
+        'body': """
+            <pc-form-group label="${1:label}" ng-model="vm.${2:model}">
+                <select class="form-control" name="${3:name}" ng-model="vm.${2:model}"
+                    ng-options="key as value for (key, value) in vm.${4:list}" required="false">
+                </select>
+            </pc-form-group>
+        """

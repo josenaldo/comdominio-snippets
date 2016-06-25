@@ -11,9 +11,7 @@
 
 				<div class="card">
 					<div class="card-header">
-						<div class="hidden-xs">
-							<h2>Dados da ${5:entidade} </h2>
-						</div>
+						<h2>Dados da ${5:entidade}  <small></small></h2>
 						<div class="clearfix"></div>
 					</div>
 
@@ -62,6 +60,7 @@
 				<div class="card">
 				    <div class="card-header">
 				        <h4>Pesquisa</h4>
+						<div class="clearfix"></div>
 				    </div>
 				    <div class="card-body card-padding">
 				        <form name="formFilter" role="form" novalidate show-validation class="form" >
@@ -94,46 +93,6 @@
 				        </div>
 				        <div class="clearfix"></div>
 				    </div>
-				</div>
-
-
-
-				<div class="well form-datatable">
-					<form name="formFilter" role="form" novalidate show-validation class="form" >
-						<div ng-init="form = formFilter"></div>
-
-						<div class="row">
-							<div class="col-md-12">
-								<h4>Pesquisa</h4>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-3">
-								<pc-form-group label="Código" label-translate="Código">
-									<input type="text" class="form-control" name="${5:entityId}" ng-model="vm.filters.${5:entityId}"
-										ui-number-mask="0" ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
-								</pc-form-group>
-							</div>
-
-							<div class="col-md-3">
-								<pc-form-group label="Nome" label-translate="Nome">
-									<input type="text" class="form-control" name="name" ng-model="vm.filters.name"
-										ui-keypress="{enter:'vm.datatableControl.applySearch()'}">
-								</pc-form-group>
-							</div>
-
-						</div>
-
-						<div class="modal-footer">
-							<button class="btn btn-primary" ng-click="vm.datatableControl.applySearch()">
-								<i class="fa fa-search"></i> Pesquisar
-							</button>
-							<button class="btn btn-warning" ng-click="vm.datatableControl.cancelSearch()">
-								<i class="fa fa-ban"></i> Cancelar
-							</button>
-						</div>
-					</form>
 				</div>
 			</script>
 		"""
