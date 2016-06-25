@@ -1,25 +1,11 @@
 '.source.js':
-    'State':
-        'prefix': 'pcstate'
+    'State Data':
+        'prefix': 'pcstatedata'
         'body': """
-            (function() {
-                'use strict';
-
-                angular
-                    .module('${1:comdominioApp}')
-                    .config('StateConfig', StateConfig);
-
-                StateConfig.$inject = ['$stateProvider'];
-
-                function StateConfig($stateProvider) {
-                    $stateProvider.state('${2:state}', {
-                        url: '${3:url}',
-                        templateUrl: '${4:templateUrl}',
-                        data: {
-                            authorities: [${5:authorities}],
-                            pageTitle: '${6:pageTitle}'
-                        },
-                    });
-                }
-            })();
+            data: {
+                authorities: [
+                    ${1:USER_ROLES.all}
+                ],
+                pageTitle: '${2:pageTitle}'
+            },
         """

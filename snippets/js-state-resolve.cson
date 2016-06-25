@@ -1,0 +1,12 @@
+'.source.js':
+    'State Resolve':
+        'prefix': 'pcstateresolve'
+        'body': """
+            resolve: {
+                loadPlugin: function ( $ocLazyLoad ) {
+                    return $ocLazyLoad.load( [
+                        '${1:controllers_and_other_files}',
+                    ] );
+                }
+            }
+        """

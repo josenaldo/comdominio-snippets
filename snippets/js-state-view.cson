@@ -1,0 +1,12 @@
+'.source.js':
+    'State View':
+        'prefix': 'pcstateview'
+        'body': """
+            views: {
+                'content@': {
+                    templateUrl: '${1:viewTemplateUrl}',
+                    controller: '${2:viewController}',
+                    controllerAs: 'vm',
+                }
+            },
+        """

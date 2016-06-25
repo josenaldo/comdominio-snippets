@@ -28,6 +28,13 @@
                             ],
                             pageTitle: '${8:pageTitle}'
                         },
+                        resolve: {
+                            loadPlugin: function ( $ocLazyLoad ) {
+                                return $ocLazyLoad.load( [
+                                    '${9:controllers_and_other_files}',
+                                ] );
+                            }
+                        }
 
                     });
                 }
