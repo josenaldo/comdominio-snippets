@@ -1,5 +1,5 @@
 '.text.html':
-	'Create Page':
+	'Edit Page':
 		'prefix': 'pceditpage'
 		'body': """
 			<div class="container">
