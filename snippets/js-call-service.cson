@@ -1,14 +1,14 @@
 '.source.js':
-  'Call service':
-    'prefix': 'pcservice'
-    'body': """
-      ${1:serviceName}.${2:function}({
-        ${3:params}
-      },
-      ${4:body},
-      function(value, responseHeaders) {
-      },
-      function(error) {
-        vm.error = error;
-      });
-    """
+    'Call service':
+        'prefix': 'pcservice'
+        'body': """
+            ${1:serviceName}.${2:function}( {
+                ${3:params}
+            },
+            ${4:body},
+                function(value, responseHeaders) {
+            },
+            function(error) {
+                vm.error = error;
+            });
+        """
